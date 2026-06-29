@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0A241D" />
+
+<title>Elif — Namaz Vakti, Kur'an, Kıble, Zikir & Dua | %100 Reklamsız İslami Asistan</title>
+<meta name="description" content="Elif; namaz vakitleri, ezan bildirimi, kıble pusulası, Kur'an-ı Kerim, zikirmatik, dua ve topluluk özelliklerini tek bir sade ve şık uygulamada toplar. %100 reklamsız, gizliliğine saygılı." />
+<link rel="canonical" href="https://elifmuslim.com/" />
+<meta name="author" content="Elif" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:site_name" content="Elif" />
+<meta property="og:title" content="Elif — Huzurla dolu bir gün, tek bir uygulamada" />
+<meta property="og:description" content="Namaz vakitleri, ezan, kıble, Kur'an-ı Kerim, zikir ve dua — sade, şık ve %100 reklamsız." />
+<meta property="og:url" content="https://elifmuslim.com/" />
+<meta property="og:image" content="https://elifmuslim.com/assets/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Elif — Huzurla dolu bir gün, tek bir uygulamada" />
+<meta name="twitter:description" content="Namaz vakitleri, ezan, kıble, Kur'an, zikir ve dua — %100 reklamsız İslami yaşam asistanı." />
+<meta name="twitter:image" content="https://elifmuslim.com/assets/og.png" />
+
+<link rel="icon" type="image/png" href="assets/icon.png" />
+<link rel="apple-touch-icon" href="assets/icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Elif",
+  "operatingSystem": "iOS",
+  "applicationCategory": "LifestyleApplication",
+  "description": "Namaz vakitleri, ezan, kıble, Kur'an-ı Kerim, zikir ve dua özelliklerini tek bir sade ve reklamsız uygulamada toplayan İslami yaşam asistanı.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
+  "url": "https://elifmuslim.com/"
+}
+</script>
+
+<style>
+/* ======================================================================
+   ELIF — Marketing site
+   App Store linkini değiştirmek için: aşağıda --APP STORE LINK-- yorumunu
+   ara ve <a> etiketlerindeki href="#" yerine kendi linkini yapıştır,
+   ya da en alttaki <script> içindeki APP_STORE_URL değerini güncelle.
+   ====================================================================== */
+
+:root{
+  --green:#0E7C66;
+  --green-600:#0B6B58;
+  --green-900:#0A241D;
+  --green-800:#0C3025;
+  --green-700:#0E4537;
+  --gold:#D9B45B;
+  --gold-soft:#E7CD8E;
+  --rose:#A8324A;
+  --rose-soft:#C75B72;
+  --cream:#FBFAF5;
+  --cream-2:#F4F1E8;
+  --ink:#15201C;
+  --muted:#5E6E68;
+  --line:rgba(14,124,102,.12);
+  --card:#FFFFFF;
+  --shadow:0 24px 60px -28px rgba(10,36,29,.35);
+  --shadow-soft:0 12px 40px -22px rgba(10,36,29,.30);
+  --radius:22px;
+  --maxw:1180px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em;margin:0;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+.serif{font-family:"Fraunces",Georgia,serif;}
+
+/* ---------- Buttons / Store badges ---------- */
+.badges{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+.store{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:13px 20px;border-radius:15px;
+  background:#000;color:#fff;
+  transition:transform .25s ease, box-shadow .25s ease;
+  box-shadow:0 10px 30px -12px rgba(0,0,0,.5);
+}
+.store:hover{transform:translateY(-3px);box-shadow:0 18px 40px -14px rgba(0,0,0,.55);}
+.store svg{width:26px;height:26px;flex:none;}
+.store>span{display:flex;flex-direction:column;line-height:1.1;text-align:left;}
+.store .s-small{font-size:11px;opacity:.82;line-height:1;letter-spacing:.02em;}
+.store .s-big{font-size:18px;font-weight:600;line-height:1.15;font-family:"Inter";}
+.store.soon{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.22);box-shadow:none;cursor:default;}
+.store.soon:hover{transform:none;}
+.store.soon .pill{font-size:10px;background:var(--gold);color:#1a1305;padding:2px 8px;border-radius:99px;font-weight:700;font-family:"Inter";margin-left:2px;}
+/* light context badge */
+.store.dark-on-light{background:#0d0d0f;}
+
+/* ---------- Nav ---------- */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  transition:background .3s ease, box-shadow .3s ease, padding .3s ease;
+  padding:16px 0;
+}
+header.nav.scrolled{
+  background:rgba(251,250,245,.82);
+  backdrop-filter:saturate(180%) blur(18px);
+  -webkit-backdrop-filter:saturate(180%) blur(18px);
+  box-shadow:0 1px 0 rgba(14,124,102,.10);
+  padding:11px 0;
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:20px;color:#fff;transition:color .3s;}
+.scrolled .brand{color:var(--ink);}
+.brand .mark{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(155deg,#13967b,#0A3C30);
+  display:grid;place-items:center;flex:none;
+  box-shadow:0 6px 18px -8px rgba(10,36,29,.6);
+}
+.brand .mark svg{width:18px;height:24px;}
+.brand b{font-family:"Fraunces";font-weight:600;letter-spacing:.01em;}
+.nav-links{display:flex;gap:30px;align-items:center;}
+.nav-links a{font-size:14.5px;font-weight:500;color:rgba(255,255,255,.82);transition:color .25s;}
+.nav-links a:hover{color:#fff;}
+.scrolled .nav-links a{color:var(--muted);}
+.scrolled .nav-links a:hover{color:var(--green);}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--gold);color:#231903;font-weight:600;font-size:14px;
+  padding:9px 17px;border-radius:99px;transition:transform .25s, box-shadow .25s;
+  box-shadow:0 8px 22px -10px rgba(217,180,91,.8);
+}
+.nav-cta:hover{transform:translateY(-2px);}
+.nav-links .links-group{display:flex;gap:30px;align-items:center;}
+.menu-btn{display:none;}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  background:
+    radial-gradient(120% 90% at 80% 0%, #14906f 0%, transparent 55%),
+    radial-gradient(90% 80% at 0% 20%, #0c4a3a 0%, transparent 60%),
+    linear-gradient(165deg,#0E5A48 0%, #0A2A21 60%, #07201A 100%);
+  color:#fff;
+  padding:160px 0 90px;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M40 0l40 40-40 40L0 40z'/%3E%3Cpath d='M40 14l26 26-26 26-26-26z'/%3E%3Ccircle cx='40' cy='40' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  opacity:.6;pointer-events:none;mask-image:linear-gradient(to bottom, #000 0%, transparent 75%);
+  -webkit-mask-image:linear-gradient(to bottom, #000 0%, transparent 75%);
+}
+.hero .glow{
+  position:absolute;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle, rgba(217,180,91,.34), transparent 65%);
+  filter:blur(20px);top:-120px;right:-60px;pointer-events:none;
+  animation:floaty 11s ease-in-out infinite;
+}
+.hero .glow.two{background:radial-gradient(circle, rgba(20,150,120,.5), transparent 65%);top:auto;bottom:-180px;left:-140px;right:auto;width:600px;height:600px;animation-delay:-4s;}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-26px)}}
+
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:13px;font-weight:600;letter-spacing:.04em;
+  color:var(--gold-soft);background:rgba(217,180,91,.12);
+  border:1px solid rgba(217,180,91,.28);
+  padding:7px 14px;border-radius:99px;margin-bottom:24px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(217,180,91,.25);}
+.hero h1{font-size:clamp(40px,6vw,68px);font-weight:500;letter-spacing:-.02em;}
+.hero h1 em{font-style:italic;color:var(--gold-soft);}
+.hero .lead{font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.78);max-width:30em;margin:22px 0 32px;}
+.hero .badges{margin-bottom:22px;}
+.hero .microtrust{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:rgba(255,255,255,.66);}
+.hero .microtrust span{display:inline-flex;align-items:center;gap:7px;}
+.hero .microtrust svg{width:15px;height:15px;color:var(--gold);}
+
+/* phone */
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:560px;}
+.phone{
+  position:relative;width:300px;border-radius:46px;
+  background:#0b0b0d;padding:11px;
+  box-shadow:0 50px 90px -30px rgba(0,0,0,.7), 0 0 0 2px rgba(255,255,255,.06) inset;
+  animation:rise 1.1s cubic-bezier(.2,.8,.2,1) both;
+}
+.phone img{border-radius:36px;display:block;width:100%;}
+.phone.float{animation:rise 1.1s cubic-bezier(.2,.8,.2,1) both, bob 6s ease-in-out 1.1s infinite;}
+@keyframes rise{from{opacity:0;transform:translateY(40px) rotateX(8deg) scale(.96)}to{opacity:1;transform:none}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hero-visual .chip{
+  position:absolute;z-index:5;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);border-radius:16px;padding:12px 15px;
+  box-shadow:var(--shadow);color:var(--ink);display:flex;align-items:center;gap:11px;
+  animation:rise 1s both;
+}
+.hero-visual .chip .ic{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;flex:none;color:#fff;}
+.hero-visual .chip .t{font-size:12px;color:var(--muted);line-height:1.2;}
+.hero-visual .chip .v{font-size:15px;font-weight:700;color:var(--ink);font-family:"Inter";}
+.chip.c1{top:60px;left:-6px;animation-delay:.5s;}
+.chip.c2{bottom:90px;right:-14px;animation-delay:.75s;}
+
+/* ---------- generic section ---------- */
+section{position:relative;}
+.pad{padding:96px 0;}
+.kicker{
+  display:inline-block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--green);margin-bottom:14px;
+}
+.sec-head{max-width:42rem;margin:0 auto 56px;text-align:center;}
+.sec-head h2{font-size:clamp(30px,4.4vw,46px);}
+.sec-head p{color:var(--muted);font-size:17px;margin-top:16px;}
+
+/* trust strip */
+.trust{background:var(--green-900);color:#fff;padding:26px 0;}
+.trust-in{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center;}
+.trust-item{display:flex;align-items:center;gap:11px;font-size:14.5px;color:rgba(255,255,255,.86);font-weight:500;}
+.trust-item svg{width:22px;height:22px;color:var(--gold);flex:none;}
+
+/* ---------- Bento features ---------- */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;}
+.fcard{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;box-shadow:var(--shadow-soft);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, border-color .35s;
+  position:relative;overflow:hidden;
+}
+.fcard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(14,124,102,.28);}
+.fcard .fic{
+  width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;
+  background:linear-gradient(150deg,rgba(14,124,102,.14),rgba(14,124,102,.05));color:var(--green);
+}
+.fcard.rose .fic{background:linear-gradient(150deg,rgba(168,50,74,.14),rgba(168,50,74,.05));color:var(--rose);}
+.fcard.gold .fic{background:linear-gradient(150deg,rgba(217,180,91,.20),rgba(217,180,91,.07));color:#9a7a1f;}
+.fcard .fic svg{width:25px;height:25px;}
+.fcard h3{font-size:20px;font-weight:600;margin-bottom:7px;}
+.fcard p{color:var(--muted);font-size:14.5px;margin:0;}
+.span-3{grid-column:span 3;}
+.span-2{grid-column:span 2;}
+.fcard.feature{grid-column:span 3;display:flex;flex-direction:column;justify-content:flex-end;min-height:230px;color:#fff;border:none;}
+.fcard.feature.kuran{background:linear-gradient(150deg,#0E7C66,#0A3F33);}
+.fcard.feature .fic{background:rgba(255,255,255,.16);color:#fff;}
+.fcard.feature h3{color:#fff;}
+.fcard.feature p{color:rgba(255,255,255,.82);}
+.fcard.feature .deco{position:absolute;top:-30px;right:-30px;width:180px;height:180px;opacity:.18;}
+
+/* ---------- Showcase rows ---------- */
+.showcase{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.showcase.rev .text{order:2;}
+.showcase .text h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:18px;}
+.showcase .text .kicker{color:var(--rose);}
+.showcase .text p{color:var(--muted);font-size:16.5px;margin:0 0 22px;}
+.flist{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:13px;}
+.flist li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:var(--ink);}
+.flist li svg{width:21px;height:21px;color:var(--green);flex:none;margin-top:2px;}
+.showcase .visual{display:flex;justify-content:center;position:relative;}
+.showcase .visual .phone{width:288px;}
+.showcase .visual .halo{
+  position:absolute;inset:-8% -4%;border-radius:50%;z-index:0;
+  background:radial-gradient(circle at center, rgba(14,124,102,.18), transparent 62%);
+  filter:blur(8px);
+}
+.showcase.rose .visual .halo{background:radial-gradient(circle at center, rgba(168,50,74,.16), transparent 62%);}
+.showcase .visual .phone{position:relative;z-index:1;}
+
+/* ---------- Ask Elif band ---------- */
+.ask{
+  background:
+    radial-gradient(80% 120% at 85% 10%, rgba(168,50,74,.45), transparent 55%),
+    linear-gradient(160deg,#15201C,#0A241D);
+  color:#fff;overflow:hidden;
+}
+.ask .wrap{position:relative;z-index:2;}
+.ask-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.ask h2{font-size:clamp(30px,4.2vw,48px);margin-bottom:18px;}
+.ask h2 em{font-style:italic;color:var(--gold-soft);}
+.ask p{color:rgba(255,255,255,.74);font-size:17px;margin:0 0 28px;}
+.ask .qbox{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:22px;backdrop-filter:blur(10px);}
+.ask .qrow{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px;}
+.ask .qrow:last-child{margin-bottom:0;}
+.ask .avatar{width:38px;height:38px;border-radius:11px;flex:none;display:grid;place-items:center;font-weight:700;}
+.ask .avatar.u{background:rgba(255,255,255,.12);}
+.ask .avatar.e{background:linear-gradient(150deg,#13967b,#0A3C30);}
+.ask .avatar.e svg{width:20px;height:26px;}
+.ask .bubble{background:rgba(255,255,255,.07);border-radius:14px;padding:13px 16px;font-size:14.5px;color:rgba(255,255,255,.9);}
+.ask .bubble.q{background:rgba(217,180,91,.14);color:#fff;}
+.ask .src{font-size:11.5px;color:var(--gold-soft);margin-top:9px;display:flex;align-items:center;gap:6px;}
+
+/* ---------- Privacy band ---------- */
+.privacy{background:var(--cream-2);}
+.privacy-card{
+  background:linear-gradient(160deg,#0E7C66,#0A2E25);color:#fff;
+  border-radius:32px;padding:60px;text-align:center;position:relative;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.privacy-card::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='none' stroke='%23ffffff' stroke-opacity='0.05'/%3E%3C/svg%3E");opacity:.7;}
+.privacy-card>*{position:relative;z-index:2;}
+.privacy-card .seal{width:74px;height:74px;border-radius:20px;background:rgba(255,255,255,.12);display:grid;place-items:center;margin:0 auto 22px;border:1px solid rgba(255,255,255,.18);}
+.privacy-card .seal svg{width:36px;height:36px;color:var(--gold-soft);}
+.privacy-card h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px;}
+.privacy-card h2 em{font-style:italic;color:var(--gold-soft);}
+.privacy-card p{color:rgba(255,255,255,.82);max-width:44rem;margin:0 auto 30px;font-size:16.5px;}
+.privacy-points{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.privacy-points span{font-size:13.5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:9px 16px;border-radius:99px;display:inline-flex;gap:8px;align-items:center;}
+.privacy-points svg{width:15px;height:15px;color:var(--gold-soft);}
+
+/* ---------- Languages ---------- */
+.langs{text-align:center;}
+.lang-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px;}
+.lang-strip .lg{
+  background:#fff;border:1px solid var(--line);border-radius:99px;padding:11px 20px;
+  font-weight:500;font-size:15px;display:inline-flex;align-items:center;gap:10px;box-shadow:var(--shadow-soft);
+  transition:transform .25s;
+}
+.lang-strip .lg:hover{transform:translateY(-3px);}
+.lang-strip .lg .fl{font-size:19px;}
+
+/* numbers */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:54px;}
+.stat{text-align:center;}
+.stat .n{font-family:"Fraunces";font-size:clamp(34px,4vw,52px);font-weight:500;color:var(--green);line-height:1;}
+.stat .l{color:var(--muted);font-size:14px;margin-top:8px;}
+
+/* ---------- Final CTA ---------- */
+.final{
+  background:
+    radial-gradient(90% 120% at 20% 0%, #14906f 0%, transparent 55%),
+    linear-gradient(160deg,#0E5A48,#07201A);
+  color:#fff;text-align:center;overflow:hidden;position:relative;
+}
+.final::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 0l40 40-40 40L0 40z' fill='none' stroke='%23ffffff' stroke-opacity='0.045'/%3E%3C/svg%3E");}
+.final .wrap{position:relative;z-index:2;}
+.final .bigmark{width:80px;height:80px;border-radius:24px;background:linear-gradient(155deg,#13967b,#0A3C30);display:grid;place-items:center;margin:0 auto 26px;box-shadow:0 20px 50px -18px rgba(0,0,0,.6);}
+.final .bigmark svg{width:34px;height:46px;}
+.final h2{font-size:clamp(32px,5vw,56px);margin-bottom:18px;}
+.final h2 em{font-style:italic;color:var(--gold-soft);}
+.final p{color:rgba(255,255,255,.78);max-width:40rem;margin:0 auto 34px;font-size:18px;}
+.final .badges{justify-content:center;}
+
+/* ---------- Footer ---------- */
+footer{background:var(--green-900);color:rgba(255,255,255,.7);padding:56px 0 30px;}
+.foot-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.foot-brand{max-width:22rem;}
+.foot-brand .brand{color:#fff;margin-bottom:14px;}
+.foot-brand p{font-size:14px;color:rgba(255,255,255,.55);}
+.foot-cols{display:flex;gap:64px;flex-wrap:wrap;}
+.foot-col h4{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-soft);margin:0 0 16px;font-family:"Inter";font-weight:700;}
+.foot-col a{display:block;font-size:14.5px;color:rgba(255,255,255,.72);margin-bottom:11px;transition:color .2s;}
+.foot-col a:hover{color:#fff;}
+.foot-bottom{margin-top:44px;padding-top:24px;border-top:1px solid rgba(255,255,255,.10);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.45);}
+.foot-ayah{font-family:"Fraunces";font-style:italic;color:rgba(255,255,255,.6);}
+
+/* ---------- reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.8,.2,1), transform .7s cubic-bezier(.2,.8,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+.reveal.d1{transition-delay:.08s;}
+.reveal.d2{transition-delay:.16s;}
+.reveal.d3{transition-delay:.24s;}
+.reveal.d4{transition-delay:.32s;}
+
+/* ---------- Responsive ---------- */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;text-align:center;}
+  .hero .lead{margin-left:auto;margin-right:auto;}
+  .hero .badges,.hero .microtrust{justify-content:center;}
+  .hero-visual{margin-top:46px;min-height:auto;}
+  .bento{grid-template-columns:repeat(2,1fr);}
+  .fcard.feature,.span-3,.span-2{grid-column:span 2;}
+  .showcase{grid-template-columns:1fr;gap:40px;}
+  .showcase.rev .text{order:0;}
+  .ask-grid{grid-template-columns:1fr;gap:36px;}
+  .stats{grid-template-columns:repeat(2,1fr);gap:34px 20px;}
+}
+@media(max-width:680px){
+  .pad{padding:70px 0;}
+  .nav-links .links-group{display:none;}
+  .privacy-card{padding:40px 24px;}
+  .trust-in{justify-content:center;gap:18px 26px;}
+  .bento{grid-template-columns:1fr;}
+  .fcard.feature,.span-3,.span-2{grid-column:span 1;}
+  .foot-bottom{flex-direction:column;}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;}
+  .reveal{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#" class="brand" aria-label="Elif ana sayfa">
+      <span class="mark">
+        <svg viewBox="0 0 40 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 4c2 4 3 9 3 18s-1 18-3 26c-2-8-3-17-3-26S18 8 20 4z" fill="#E7CD8E"/>
+          <ellipse cx="20" cy="50" rx="9" ry="2.4" fill="#E7CD8E" opacity=".85"/>
+        </svg>
+      </span>
+      <b>Elif</b>
+    </a>
+    <nav class="nav-links">
+      <div class="links-group">
+        <a href="#ozellikler">Özellikler</a>
+        <a href="#kuran">Kur'an</a>
+        <a href="#sor">Elif'e Sor</a>
+        <a href="#gizlilik">Gizlilik</a>
+      </div>
+      <a href="#" class="nav-cta js-appstore"><!-- --APP STORE LINK-- -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 1.6c.1 1.2-.4 2.4-1.1 3.2-.8.9-2 1.6-3.1 1.5-.1-1.1.4-2.3 1.1-3.1.8-.9 2-1.5 3.1-1.6zM20.8 17c-.5 1.2-.8 1.7-1.5 2.8-1 1.5-2.4 3.4-4.1 3.4-1.5 0-1.9-1-4-1-2 0-2.5 1-4 1-1.7 0-3-1.7-4-3.2-2.8-4.2-3.1-9.2-1.4-11.8 1.2-1.9 3.2-3 5-3 1.9 0 3 1 4.5 1 1.4 0 2.3-1 4.5-1 1.6 0 3.4.9 4.6 2.4-4 2.2-3.4 8 .9 9.6z"/></svg>
+        İndir
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <span class="glow"></span><span class="glow two"></span>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span>%100 REKLAMSIZ · GİZLİLİĞE SAYGILI</span>
+      <h1>Huzurla dolu bir gün,<br><em>tek bir uygulamada.</em></h1>
+      <p class="lead">Namaz vakitleri, ezan bildirimi, kıble pusulası, Kur'an-ı Kerim, zikirmatik ve günlük dualar — sade, şık ve dikkat dağıtmayan tek bir uygulamada. Elif, günlük ibadet hayatını kolaylaştıran İslami yaşam asistanın.</p>
+
+      <div class="badges">
+        <a href="#" class="store js-appstore"><!-- --APP STORE LINK-- -->
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 1.6c.1 1.2-.4 2.4-1.1 3.2-.8.9-2 1.6-3.1 1.5-.1-1.1.4-2.3 1.1-3.1.8-.9 2-1.5 3.1-1.6zM20.8 17c-.5 1.2-.8 1.7-1.5 2.8-1 1.5-2.4 3.4-4.1 3.4-1.5 0-1.9-1-4-1-2 0-2.5 1-4 1-1.7 0-3-1.7-4-3.2-2.8-4.2-3.1-9.2-1.4-11.8 1.2-1.9 3.2-3 5-3 1.9 0 3 1 4.5 1 1.4 0 2.3-1 4.5-1 1.6 0 3.4.9 4.6 2.4-4 2.2-3.4 8 .9 9.6z"/></svg>
+          <span><span class="s-small">App Store'dan</span><span class="s-big">İndir</span></span>
+        </a>
+        <span class="store soon" aria-disabled="true">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.2c-.3.2-.5.6-.5 1v17.6c0 .4.2.8.5 1l9.8-9.8L3.6 2.2zm11.2 7.6L5.5 1.5l11.2 6.5-1.9 1.8zm2.9 1.7l2.6 1.5c.8.5.8 1.6 0 2l-2.6 1.5-2.2-2.2 2.2-2.8zM5.5 22.5l9.3-8.3 1.9 1.8-11.2 6.5z"/></svg>
+          <span><span class="s-small">Yakında</span><span class="s-big">Google Play</span></span>
+          <span class="pill">YAKINDA</span>
+        </span>
+      </div>
+
+      <div class="microtrust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Reklamsız</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Verilerin satılmaz</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>7 dil</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4"/></svg>Diyanet uyumlu</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="chip c1">
+        <span class="ic" style="background:linear-gradient(150deg,#A8324A,#7d2236)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
+        <span><span class="t">İmsak vaktine</span><span class="v">02:29</span></span>
+      </div>
+      <div class="chip c2">
+        <span class="ic" style="background:linear-gradient(150deg,#0E7C66,#0A3F33)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 2.5 5L20 8l-4 4 1 6-5-3-5 3 1-6L4 8l5.5-1z"/></svg>
+        </span>
+        <span><span class="t">Kıble yönü</span><span class="v">151°</span></span>
+      </div>
+      <div class="phone float">
+        <img src="assets/shots/01-home.png" alt="Elif uygulaması ana ekranı — namaz vakti geri sayımı ve günlük rutin" loading="eager" width="300" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust">
+  <div class="wrap trust-in">
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>Tek bir reklam yok</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Konumun cihazında işlenir</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5z"/></svg>Gizliliğine saygılı</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tamamen ücretsiz</div>
+  </div>
+</div>
+
+<!-- ============ FEATURES BENTO ============ -->
+<section class="pad" id="ozellikler">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Tek uygulama, bütün bir gün</span>
+      <h2>İhtiyacın olan her şey, bir arada</h2>
+      <p>Namazdan Kur'an'a, zikirden topluluğa — günlük ibadet hayatını sadeleştiren özellikler özenle bir araya getirildi.</p>
+    </div>
+
+    <div class="bento">
+      <!-- Kuran feature card -->
+      <article class="fcard feature kuran reveal">
+        <svg class="deco" viewBox="0 0 200 200" fill="none" stroke="#fff" stroke-width="2"><path d="M100 10l90 90-90 90L10 100z"/><path d="M100 40l60 60-60 60-60-60z"/></svg>
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2zM22 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z"/></svg></span>
+        <h3>Kur'an-ı Kerim</h3>
+        <p>Tüm sureler; Arapça, okunuş ve çoklu meal. Ayet ayet sesli dinleme, kâri seçimi, ezber modu ve çevrimdışı okuma.</p>
+      </article>
+
+      <article class="fcard reveal d1">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <h3>Namaz Vakitleri</h3>
+        <p>Diyanet dâhil çoklu hesaplama yöntemiyle hassas vakitler; dakika bazında ince ayar.</p>
+      </article>
+
+      <article class="fcard rose reveal d2">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+        <h3>Ezan & Bildirim</h3>
+        <p>Her vakit için sesli ezan, vakit öncesi nazik hatırlatma ve kilit ekranı canlı geri sayım.</p>
+      </article>
+
+      <article class="fcard gold reveal">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6z"/></svg></span>
+        <h3>Kıble Pusulası</h3>
+        <p>Hassas kıble yönü, dönüş yönlendirmesi ve kamerayla AR kıble.</p>
+      </article>
+
+      <article class="fcard reveal d1">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="4" r="1.5"/><circle cx="19" cy="8" r="1.5"/><circle cx="19" cy="16" r="1.5"/><circle cx="12" cy="20" r="1.5"/><circle cx="5" cy="16" r="1.5"/><circle cx="5" cy="8" r="1.5"/></svg></span>
+        <h3>Zikirmatik</h3>
+        <p>Akıcı dijital tesbih, namaz sonrası tesbihat, salavat ve özel zikir hedefleri.</p>
+      </article>
+
+      <article class="fcard reveal d2">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9C.5 8 2 4 6 4c2.2 0 3.5 1.3 6 4 2.5-2.7 3.8-4 6-4 4 0 5.5 4 3.5 8C19 16.5 12 21 12 21z"/></svg></span>
+        <h3>Dua & Esmâ</h3>
+        <p>Kategorili dualar (Arapça + okunuş + meal), Esmâü'l-Hüsnâ ve 40 hadis.</p>
+      </article>
+
+      <article class="fcard reveal">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+        <h3>İbadet Takibi</h3>
+        <p>Günlük namaz/oruç takibi; puan, seri ve rozetlerle nazik motivasyon.</p>
+      </article>
+
+      <article class="fcard reveal d1">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3>Topluluk & Dua Duvarı</h3>
+        <p>Dualarını paylaş, kardeşlerin "Âmin" desin; grup hatmine katıl.</p>
+      </article>
+
+      <article class="fcard reveal d2">
+        <span class="fic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+        <h3>İlim Kütüphanesi</h3>
+        <p>İlmihal, Siyer, Sahabe hayatları, kıssalar, dini sözlük ve quizler.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWCASE: KURAN ============ -->
+<section class="pad" id="kuran" style="background:var(--cream-2)">
+  <div class="wrap showcase">
+    <div class="text reveal">
+      <span class="kicker" style="color:var(--green)">Kur'an-ı Kerim</span>
+      <h2>Elinde bir Mushaf varmış gibi</h2>
+      <p>Mushaf modunda sayfa sayfa Arapça oku, kaldığın yerden devam et. Dinle, ezberle, hatmet — hepsi çevrimdışı çalışır.</p>
+      <ul class="flist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Mushaf modu: gerçek sayfa düzeniyle Arapça okuma</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ayet ayet sesli dinleme, okunan ayet vurgusu</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hatim takibi, ezber modu ve Kur'an Radyosu</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Çoklu meal seçeneği, arama ve yer imleri</li>
+      </ul>
+      <div class="badges"><a href="#" class="store dark-on-light js-appstore"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 1.6c.1 1.2-.4 2.4-1.1 3.2-.8.9-2 1.6-3.1 1.5-.1-1.1.4-2.3 1.1-3.1.8-.9 2-1.5 3.1-1.6zM20.8 17c-.5 1.2-.8 1.7-1.5 2.8-1 1.5-2.4 3.4-4.1 3.4-1.5 0-1.9-1-4-1-2 0-2.5 1-4 1-1.7 0-3-1.7-4-3.2-2.8-4.2-3.1-9.2-1.4-11.8 1.2-1.9 3.2-3 5-3 1.9 0 3 1 4.5 1 1.4 0 2.3-1 4.5-1 1.6 0 3.4.9 4.6 2.4-4 2.2-3.4 8 .9 9.6z"/></svg><span><span class="s-small">App Store'dan</span><span class="s-big">İndir</span></span></a></div>
+    </div>
+    <div class="visual reveal d1">
+      <div class="halo"></div>
+      <div class="phone"><img src="assets/shots/02-kuran.png" alt="Elif Kur'an-ı Kerim ekranı — mushaf modu, hatim takibi ve Kur'an radyosu" loading="lazy" width="288" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWCASE: KIBLE / NAMAZ ============ -->
+<section class="pad rose">
+  <div class="wrap showcase rev rose">
+    <div class="text reveal d1">
+      <span class="kicker">Namaz & Kıble</span>
+      <h2>Vakti kaçırma, yönünü şaşırma</h2>
+      <p>Bulunduğun yere göre hassas namaz vakitleri ve telefonun pusulasıyla doğru kıble yönü. Tamamı cihazında hesaplanır — konumun hiçbir sunucuya gönderilmez.</p>
+      <ul class="flist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hassas kıble yönü, dönüş yönlendirmesi ve AR kıble</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Mekke'ye uzaklık ve hassasiyet uyarıları</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Aylık namaz tablosu ve İmsakiye (sahur/iftar)</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ana ekran widget'ları ve kilit ekranı geri sayımı</li>
+      </ul>
+    </div>
+    <div class="visual reveal">
+      <div class="halo"></div>
+      <div class="phone"><img src="assets/shots/05-kible.png" alt="Elif kıble pusulası ekranı — kıble yönü ve Mekke'ye uzaklık" loading="lazy" width="288" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWCASE: ZIKIR / TESBIHAT ============ -->
+<section class="pad">
+  <div class="wrap showcase">
+    <div class="text reveal">
+      <span class="kicker" style="color:var(--green)">Zikir & Tesbihat</span>
+      <h2>Kalbini her an huzurla doldur</h2>
+      <p>Namaz sonrası tesbihatı adım adım takip et, dijital tesbihle zikret, salavat getir. Günlük virdini belirle, geçmişini gör.</p>
+      <ul class="flist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Adım adım namaz sonrası tesbihat rehberi</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Akıcı dijital tesbih, özel zikir ve hedef belirleme</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sabah-akşam zikirleri ve günlük vird</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tefekkür günlüğü ve ruh hali takibi</li>
+      </ul>
+    </div>
+    <div class="visual reveal d1">
+      <div class="halo"></div>
+      <div class="phone"><img src="assets/shots/04-tesbihat.png" alt="Elif namaz sonrası tesbihat ekranı — Âyetü'l-Kürsî" loading="lazy" width="288" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ASK ELIF (AI) ============ -->
+<section class="pad ask" id="sor">
+  <div class="wrap ask-grid">
+    <div class="reveal">
+      <span class="kicker" style="color:var(--gold-soft)">Elif'e Sor</span>
+      <h2>Aklındaki soruya, <em>kaynağıyla</em> cevap</h2>
+      <p>Dini bir merakın mı var? Elif'e sor; sade bir dille, kaynaklarına dayanarak yanıtlasın. Öğrenmek hiç bu kadar huzurlu olmamıştı.</p>
+      <div class="badges">
+        <a href="#" class="store js-appstore"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 1.6c.1 1.2-.4 2.4-1.1 3.2-.8.9-2 1.6-3.1 1.5-.1-1.1.4-2.3 1.1-3.1.8-.9 2-1.5 3.1-1.6zM20.8 17c-.5 1.2-.8 1.7-1.5 2.8-1 1.5-2.4 3.4-4.1 3.4-1.5 0-1.9-1-4-1-2 0-2.5 1-4 1-1.7 0-3-1.7-4-3.2-2.8-4.2-3.1-9.2-1.4-11.8 1.2-1.9 3.2-3 5-3 1.9 0 3 1 4.5 1 1.4 0 2.3-1 4.5-1 1.6 0 3.4.9 4.6 2.4-4 2.2-3.4 8 .9 9.6z"/></svg><span><span class="s-small">App Store'dan</span><span class="s-big">İndir</span></span></a>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <div class="qbox">
+        <div class="qrow">
+          <span class="avatar u">S</span>
+          <div class="bubble q">Cuma gününün fazileti nedir?</div>
+        </div>
+        <div class="qrow">
+          <span class="avatar e"><svg viewBox="0 0 40 56" fill="none"><path d="M20 4c2 4 3 9 3 18s-1 18-3 26c-2-8-3-17-3-26S18 8 20 4z" fill="#E7CD8E"/><ellipse cx="20" cy="50" rx="9" ry="2.4" fill="#E7CD8E" opacity=".85"/></svg></span>
+          <div>
+            <div class="bubble">Cuma, haftanın en faziletli günüdür. Bu günde yapılan dualar, salavat ve Kehf sûresini okumak özellikle tavsiye edilmiştir…
+              <div class="src"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Kaynaklarıyla birlikte</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIVACY ============ -->
+<section class="pad privacy" id="gizlilik">
+  <div class="wrap">
+    <div class="privacy-card reveal">
+      <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <h2>Reklam yok. Takip yok. <em>Sadece huzur.</em></h2>
+      <p>Elif'te tek bir reklam bile yok — ne banner, ne pop-up, ne uygunsuz içerik. Konumun cihazında işlenir, sunucuya gönderilmez; verilerin asla satılmaz. Ayet, dua ve zikir ekranların dikkatin dağılmadan açılır.</p>
+      <div class="privacy-points">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>%100 reklamsız</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Veri satışı yok</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Konum cihazda</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>İsteğe bağlı bulut yedek</span>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal"><div class="n">0</div><div class="l">Reklam · her zaman</div></div>
+      <div class="stat reveal d1"><div class="n">7</div><div class="l">Dil desteği</div></div>
+      <div class="stat reveal d2"><div class="n">40+</div><div class="l">Özellik & ekran</div></div>
+      <div class="stat reveal d3"><div class="n">∞</div><div class="l">Çevrimdışı erişim</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LANGUAGES ============ -->
+<section class="pad langs">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:0">
+      <span class="kicker">Dünyanın her yerinde</span>
+      <h2>7 dilde, tek bir huzur</h2>
+      <p>Uygulama arayüzü yedi dilde tamamen yerelleştirildi — Arapça için sağdan-sola tam destek.</p>
+    </div>
+    <div class="lang-strip reveal d1">
+      <span class="lg"><span class="fl">🇹🇷</span>Türkçe</span>
+      <span class="lg"><span class="fl">🇬🇧</span>English</span>
+      <span class="lg"><span class="fl">🇸🇦</span>العربية</span>
+      <span class="lg"><span class="fl">🇫🇷</span>Français</span>
+      <span class="lg"><span class="fl">🇮🇩</span>Indonesia</span>
+      <span class="lg"><span class="fl">🇧🇩</span>বাংলা</span>
+      <span class="lg"><span class="fl">🇵🇰</span>اردو</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="pad final">
+  <div class="wrap">
+    <div class="bigmark reveal">
+      <svg viewBox="0 0 40 56" fill="none" aria-hidden="true"><path d="M20 4c2 4 3 9 3 18s-1 18-3 26c-2-8-3-17-3-26S18 8 20 4z" fill="#E7CD8E"/><ellipse cx="20" cy="50" rx="9" ry="2.4" fill="#E7CD8E" opacity=".85"/></svg>
+    </div>
+    <h2 class="reveal">Bugün, <em>huzurla</em> başla</h2>
+    <p class="reveal d1">Elif'i ücretsiz indir. Reklamsız, gösterişsiz ve tamamen senin yanında.</p>
+    <div class="badges reveal d2">
+      <a href="#" class="store js-appstore"><!-- --APP STORE LINK-- -->
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 1.6c.1 1.2-.4 2.4-1.1 3.2-.8.9-2 1.6-3.1 1.5-.1-1.1.4-2.3 1.1-3.1.8-.9 2-1.5 3.1-1.6zM20.8 17c-.5 1.2-.8 1.7-1.5 2.8-1 1.5-2.4 3.4-4.1 3.4-1.5 0-1.9-1-4-1-2 0-2.5 1-4 1-1.7 0-3-1.7-4-3.2-2.8-4.2-3.1-9.2-1.4-11.8 1.2-1.9 3.2-3 5-3 1.9 0 3 1 4.5 1 1.4 0 2.3-1 4.5-1 1.6 0 3.4.9 4.6 2.4-4 2.2-3.4 8 .9 9.6z"/></svg>
+        <span><span class="s-small">App Store'dan</span><span class="s-big">İndir</span></span>
+      </a>
+      <span class="store soon" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.2c-.3.2-.5.6-.5 1v17.6c0 .4.2.8.5 1l9.8-9.8L3.6 2.2zm11.2 7.6L5.5 1.5l11.2 6.5-1.9 1.8zm2.9 1.7l2.6 1.5c.8.5.8 1.6 0 2l-2.6 1.5-2.2-2.2 2.2-2.8zM5.5 22.5l9.3-8.3 1.9 1.8-11.2 6.5z"/></svg>
+        <span><span class="s-small">Yakında</span><span class="s-big">Google Play</span></span>
+        <span class="pill">YAKINDA</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="mark"><svg viewBox="0 0 40 56" fill="none"><path d="M20 4c2 4 3 9 3 18s-1 18-3 26c-2-8-3-17-3-26S18 8 20 4z" fill="#E7CD8E"/><ellipse cx="20" cy="50" rx="9" ry="2.4" fill="#E7CD8E" opacity=".85"/></svg></span>
+          <b>Elif</b>
+        </div>
+        <p>Günlük ibadet hayatını kolaylaştıran sade, şık ve reklamsız İslami yaşam asistanı.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Uygulama</h4>
+          <a href="#ozellikler">Özellikler</a>
+          <a href="#kuran">Kur'an-ı Kerim</a>
+          <a href="#sor">Elif'e Sor</a>
+          <a href="#" class="js-appstore">App Store'dan indir</a>
+        </div>
+        <div class="foot-col">
+          <h4>Yasal</h4>
+          <a href="gizlilik.html">Gizlilik Politikası</a>
+          <a href="hesap-silme.html">Hesap Silme</a>
+          <a href="#gizlilik">Gizlilik İlkemiz</a>
+        </div>
+        <div class="foot-col">
+          <h4>İletişim</h4>
+          <a href="mailto:gokhankaya1@yahoo.com">gokhankaya1@yahoo.com</a>
+          <a href="https://elifmuslim.com">elifmuslim.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Elif. Tüm hakları saklıdır.</span>
+      <span class="foot-ayah">“Bilesiniz ki kalpler ancak Allah'ı anmakla huzur bulur.” — Ra'd, 28</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ====================================================================
+   APP STORE LINKİ — burayı kendi linkinle değiştir.
+   Elif App Store'da yayınlandı; uygulamanın App Store adresini yapıştır.
+   Örnek: "https://apps.apple.com/tr/app/elif/id1234567890"
+   ==================================================================== */
+var APP_STORE_URL = "https://apps.apple.com/app/id6776661502";
+
+document.querySelectorAll('.js-appstore').forEach(function(a){
+  a.setAttribute('href', APP_STORE_URL);
+  a.setAttribute('target','_blank');
+  a.setAttribute('rel','noopener');
+});
+
+/* Yıl */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Nav scroll state */
+var nav = document.getElementById('nav');
+function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 30); }
+onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+/* Reveal on scroll */
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+}, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
+</body>
+</html>
