@@ -446,11 +446,10 @@ footer{background:var(--green-900);color:rgba(255,255,255,.7);padding:56px 0 30p
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 1.6c.1 1.2-.4 2.4-1.1 3.2-.8.9-2 1.6-3.1 1.5-.1-1.1.4-2.3 1.1-3.1.8-.9 2-1.5 3.1-1.6zM20.8 17c-.5 1.2-.8 1.7-1.5 2.8-1 1.5-2.4 3.4-4.1 3.4-1.5 0-1.9-1-4-1-2 0-2.5 1-4 1-1.7 0-3-1.7-4-3.2-2.8-4.2-3.1-9.2-1.4-11.8 1.2-1.9 3.2-3 5-3 1.9 0 3 1 4.5 1 1.4 0 2.3-1 4.5-1 1.6 0 3.4.9 4.6 2.4-4 2.2-3.4 8 .9 9.6z"/></svg>
           <span><span class="s-small">App Store'dan</span><span class="s-big">İndir</span></span>
         </a>
-        <span class="store soon" aria-disabled="true">
+        <a href="#" class="store js-playstore"><!-- --GOOGLE PLAY LINK-- -->
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.2c-.3.2-.5.6-.5 1v17.6c0 .4.2.8.5 1l9.8-9.8L3.6 2.2zm11.2 7.6L5.5 1.5l11.2 6.5-1.9 1.8zm2.9 1.7l2.6 1.5c.8.5.8 1.6 0 2l-2.6 1.5-2.2-2.2 2.2-2.8zM5.5 22.5l9.3-8.3 1.9 1.8-11.2 6.5z"/></svg>
-          <span><span class="s-small">Yakında</span><span class="s-big">Google Play</span></span>
-          <span class="pill">YAKINDA</span>
-        </span>
+          <span><span class="s-small">Google Play'den</span><span class="s-big">İndir</span></span>
+        </a>
       </div>
 
       <div class="microtrust">
@@ -711,11 +710,10 @@ footer{background:var(--green-900);color:rgba(255,255,255,.7);padding:56px 0 30p
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 1.6c.1 1.2-.4 2.4-1.1 3.2-.8.9-2 1.6-3.1 1.5-.1-1.1.4-2.3 1.1-3.1.8-.9 2-1.5 3.1-1.6zM20.8 17c-.5 1.2-.8 1.7-1.5 2.8-1 1.5-2.4 3.4-4.1 3.4-1.5 0-1.9-1-4-1-2 0-2.5 1-4 1-1.7 0-3-1.7-4-3.2-2.8-4.2-3.1-9.2-1.4-11.8 1.2-1.9 3.2-3 5-3 1.9 0 3 1 4.5 1 1.4 0 2.3-1 4.5-1 1.6 0 3.4.9 4.6 2.4-4 2.2-3.4 8 .9 9.6z"/></svg>
         <span><span class="s-small">App Store'dan</span><span class="s-big">İndir</span></span>
       </a>
-      <span class="store soon" aria-disabled="true">
+      <a href="#" class="store js-playstore"><!-- --GOOGLE PLAY LINK-- -->
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.2c-.3.2-.5.6-.5 1v17.6c0 .4.2.8.5 1l9.8-9.8L3.6 2.2zm11.2 7.6L5.5 1.5l11.2 6.5-1.9 1.8zm2.9 1.7l2.6 1.5c.8.5.8 1.6 0 2l-2.6 1.5-2.2-2.2 2.2-2.8zM5.5 22.5l9.3-8.3 1.9 1.8-11.2 6.5z"/></svg>
-        <span><span class="s-small">Yakında</span><span class="s-big">Google Play</span></span>
-        <span class="pill">YAKINDA</span>
-      </span>
+        <span><span class="s-small">Google Play'den</span><span class="s-big">İndir</span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -738,6 +736,7 @@ footer{background:var(--green-900);color:rgba(255,255,255,.7);padding:56px 0 30p
           <a href="#kuran">Kur'an-ı Kerim</a>
           <a href="#sor">Elif'e Sor</a>
           <a href="#" class="js-appstore">App Store'dan indir</a>
+          <a href="#" class="js-playstore">Google Play'den indir</a>
         </div>
         <div class="foot-col">
           <h4>Yasal</h4>
@@ -766,9 +765,15 @@ footer{background:var(--green-900);color:rgba(255,255,255,.7);padding:56px 0 30p
    Örnek: "https://apps.apple.com/tr/app/elif/id1234567890"
    ==================================================================== */
 var APP_STORE_URL = "https://apps.apple.com/app/id6776661502";
+var PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.huzur.islamiasistan";
 
 document.querySelectorAll('.js-appstore').forEach(function(a){
   a.setAttribute('href', APP_STORE_URL);
+  a.setAttribute('target','_blank');
+  a.setAttribute('rel','noopener');
+});
+document.querySelectorAll('.js-playstore').forEach(function(a){
+  a.setAttribute('href', PLAY_STORE_URL);
   a.setAttribute('target','_blank');
   a.setAttribute('rel','noopener');
 });
