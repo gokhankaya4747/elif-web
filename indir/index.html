@@ -88,6 +88,22 @@ p.sub{
 .note{margin-top:26px; font-size:13px; line-height:1.6; color:rgba(246,243,236,.5)}
 .note a{color:rgba(246,243,236,.72)}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1379269391054857');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1379269391054857&ev=PageView&noscript=1" alt="" /></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <main class="wrap">
@@ -128,6 +144,13 @@ var playstore = document.getElementById('playstore');
 appstore.href  = APP_STORE_URL;
 playstore.href = PLAY_STORE_URL;
 
+/* Meta Pixel — mağazaya gidişi ölç (StoreRedirect özel etkinliği) */
+function trackStore(platform){
+  try { if (window.fbq) fbq('trackCustom', 'StoreRedirect', { platform: platform }); } catch(e){}
+}
+appstore.addEventListener('click',  function(){ trackStore('ios'); });
+playstore.addEventListener('click', function(){ trackStore('android'); });
+
 var ua = navigator.userAgent || "";
 var isIOS = /iPad|iPhone|iPod/.test(ua) ||
             (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); /* iPadOS */
@@ -152,6 +175,7 @@ if (isIOS || isAndroid) {
   /* Kısa bir gecikme: sayfa görünsün, sonra mağazaya devret.
      Instagram/Facebook içi tarayıcıda da bu şekilde güvenilir çalışıyor. */
   setTimeout(function(){
+    trackStore(isAndroid ? 'android' : 'ios');
     window.location.href = isAndroid ? PLAY_STORE_URL : APP_STORE_URL;
     /* Yönlendirme gerçekleşmediyse kullanıcıyı butona yönlendir */
     setTimeout(function(){
