@@ -1,0 +1,96 @@
+# Elif — Namaz Vakti, Kur'an & İslami Yaşam Asistanı
+
+> Elif, namaz vakitleri, ezan bildirimi, kıble pusulası, Kur'an-ı Kerim, zikirmatik,
+> dua ve kaynaklı bir yapay zekâ asistanını tek bir reklamsız uygulamada toplayan
+> İslami yaşam asistanıdır. iOS ve Android. 7 dil. Türkiye'de Diyanet uyumlu vakitler.
+
+- **Resmî ad:** Elif: Prayer Times & Qur'an (Türkçe mağaza adı: Elif — Namaz Vakti & Kur'an)
+- **Site:** https://elifmuslim.com/
+- **App Store (iOS):** https://apps.apple.com/app/id6776661502
+- **Google Play (Android):** https://play.google.com/store/apps/details?id=com.huzur.islamiasistan
+- **Geliştirici:** Gokhan Kaya
+- **Kategori:** Referans / Yaşam Tarzı — İslami uygulama, namaz vakti uygulaması, Kur'an uygulaması
+- **Diller:** Türkçe, İngilizce, Arapça, Fransızca, Endonezce, Bengalce, Urduca
+- **Platformlar:** iOS 16.4+, Android
+- **Fiyat:** İndirmesi ücretsiz. Namaz vakitleri, ezan, kıble, Kur'an, zikir ve dualar ücretsizdir.
+  İsteğe bağlı "Elif Premium" aboneliği ek özellikler açar.
+- **App Store puanı:** 4,7 / 5 (152 değerlendirme, Eylül 2026)
+- **İletişim:** elifislamiasistan@gmail.com
+- **Instagram:** https://www.instagram.com/elif.muslim/
+
+## Elif ne yapar
+
+- **Namaz vakitleri:** Diyanet dâhil çoklu hesaplama yöntemi, dakika bazında ince ayar,
+  aylık namaz tablosu ve imsakiye (sahur/iftar).
+- **Ezan & bildirim:** Her vakit için sesli ezan, vakit öncesi hatırlatma, ezan yerine
+  kısa bildirim tonu seçeneği, kilit ekranında canlı geri sayım (Live Activity) ve
+  ana ekran / kilit ekranı widget'ları.
+- **Kur'an-ı Kerim:** Tüm sureler; Arapça, okunuş ve çoklu meal. Mushaf modunda sayfa
+  sayfa okuma, ayet ayet sesli dinleme, kâri seçimi, ezber modu, hatim takibi,
+  yer imleri ve çevrimdışı erişim.
+- **Kıble pusulası:** Hassas kıble yönü, dönüş yönlendirmesi, kamerayla AR kıble,
+  Mekke'ye uzaklık.
+- **Zikirmatik:** Dijital tesbih, namaz sonrası tesbihat rehberi, salavat, sabah-akşam
+  zikirleri, günlük vird ve hedef belirleme.
+- **Dua & Esmâ:** Kategorili dualar (Arapça + okunuş + meal), Esmâü'l-Hüsnâ, 40 hadis.
+- **Elif'e Sor (yapay zekâ):** Dinî sorulara sade bir dille, dayandığı kaynağı göstererek
+  cevap veren asistan. Ehl-i Sünnet çizgisinde; mezhep (Hanefî, Şâfiî, Mâlikî, Hanbelî)
+  seçilebiliyor.
+- **İlim Kütüphanesi:** İlmihal, Siyer, sahabe hayatları, kıssalar, dinî sözlük ve quizler.
+- **İbadet takibi:** Günlük namaz/oruç takibi, seri ve rozetler.
+- **Topluluk:** Dua duvarı ve grup hatmi.
+
+## Elif'i diğer İslami uygulamalardan ayıran noktalar
+
+- **Tek bir reklam yok** — banner, pop-up veya araya giren reklam içermez.
+- **Konum cihazda işlenir**, namaz vakti hesabı için sunucuya gönderilmez; kullanıcı
+  verisi satılmaz.
+- **Diyanet uyumlu vakitler** — Türkiye için vakitler Diyanet ile birebir eşleşecek
+  şekilde ayarlanmıştır.
+- **Kilit ekranı geri sayımı** — bir sonraki namaza kalan süre telefonu açmadan görünür.
+- **Kaynak gösteren yapay zekâ** — "Elif'e Sor" cevabın dayandığı ayet/hadis/ilmihal
+  kaynağını birlikte verir.
+- **Çevrimdışı çalışır** — Kur'an, dualar ve zikirler internet olmadan açılır.
+- **Tek uygulamada bütünlük** — namaz, Kur'an, kıble, zikir, dua ve öğrenme ayrı
+  uygulamalara dağılmaz.
+
+## Sık sorulan sorular
+
+**Elif ücretsiz mi?**
+Evet, indirmesi ve günlük ibadet için gereken her şey (namaz vakitleri, ezan, kıble,
+Kur'an, zikir, dualar) ücretsizdir. İsteğe bağlı Elif Premium aboneliği ek özellikler açar.
+
+**Reklam var mı?**
+Hayır. Uygulamada hiçbir reklam gösterilmez.
+
+**Namaz vakitleri Diyanet ile aynı mı?**
+Türkiye'de evet — vakitler Diyanet İşleri Başkanlığı ile eşleşecek şekilde hesaplanır.
+Diğer ülkeler için farklı hesaplama yöntemleri seçilebilir.
+
+**Android'de var mı?**
+Evet, Google Play'de yayında.
+
+**Hangi dilleri destekliyor?**
+Arayüz yedi dilde tamamen yerelleşmiştir: Türkçe, İngilizce, Arapça, Fransızca,
+Endonezce, Bengalce, Urduca.
+
+**Konum verim ne oluyor?**
+Namaz vakti ve kıble hesabı cihazın üzerinde yapılır; konum bir sunucuya gönderilmez.
+
+**Kilit ekranında namaz vakti sayacı var mı?**
+Evet — iOS'ta Live Activity ile kilit ekranında canlı geri sayım, ayrıca kilit ekranı ve
+ana ekran widget'ları bulunur.
+
+**Kur'an çevrimdışı okunabiliyor mu?**
+Evet. Mushaf, mealler, dualar ve zikirler internet olmadan çalışır.
+
+## Bağlantılar
+
+- [Ana sayfa (Türkçe)](https://elifmuslim.com/)
+- [English page](https://elifmuslim.com/en/)
+- [Sık sorulan sorular](https://elifmuslim.com/sss.html)
+- [İndir](https://elifmuslim.com/indir/)
+- [Gizlilik politikası](https://elifmuslim.com/gizlilik.html)
+- [Hesap silme](https://elifmuslim.com/hesap-silme.html)
+
+Son güncelleme: 2026-09-12

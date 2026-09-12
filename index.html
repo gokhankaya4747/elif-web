@@ -8,6 +8,11 @@
 <title>Elif — Namaz Vakti, Kur'an, Kıble, Zikir & Dua | %100 Reklamsız İslami Asistan</title>
 <meta name="description" content="Elif; namaz vakitleri, ezan bildirimi, kıble pusulası, Kur'an-ı Kerim, zikirmatik, dua ve topluluk özelliklerini tek bir sade ve şık uygulamada toplar. %100 reklamsız, gizliliğine saygılı." />
 <link rel="canonical" href="https://elifmuslim.com/" />
+<link rel="alternate" hreflang="tr" href="https://elifmuslim.com/" />
+<link rel="alternate" hreflang="en" href="https://elifmuslim.com/en/" />
+<link rel="alternate" hreflang="x-default" href="https://elifmuslim.com/" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="keywords" content="islami uygulama, namaz vakti uygulaması, Kur'an uygulaması, ezan bildirimi, kıble pusulası, zikirmatik, dua uygulaması, reklamsız islami uygulama, Diyanet namaz vakitleri" />
 <meta name="author" content="Elif" />
 
 <!-- Open Graph -->
@@ -30,17 +35,98 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-<!-- Structured data -->
+<!-- Structured data — tek bir @graph: varlık (Elif) + her iki mağaza uygulaması + site.
+     Cevap motorları (ChatGPT Search, Perplexity, Gemini, Google AI Overviews) bu bloğu
+     okuyarak "Elif nedir, nerede indirilir, kaç puanı var" sorularını yanıtlıyor. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  "name": "Elif",
-  "operatingSystem": "iOS",
-  "applicationCategory": "LifestyleApplication",
-  "description": "Namaz vakitleri, ezan, kıble, Kur'an-ı Kerim, zikir ve dua özelliklerini tek bir sade ve reklamsız uygulamada toplayan İslami yaşam asistanı.",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
-  "url": "https://elifmuslim.com/"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://elifmuslim.com/#organization",
+      "name": "Elif",
+      "alternateName": "Elif — Namaz Vakti & Kur'an",
+      "url": "https://elifmuslim.com/",
+      "logo": "https://elifmuslim.com/assets/icon.png",
+      "email": "elifislamiasistan@gmail.com",
+      "founder": { "@type": "Person", "name": "Gokhan Kaya" },
+      "sameAs": [
+        "https://apps.apple.com/app/id6776661502",
+        "https://play.google.com/store/apps/details?id=com.huzur.islamiasistan",
+        "https://www.instagram.com/elif.muslim/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://elifmuslim.com/#website",
+      "url": "https://elifmuslim.com/",
+      "name": "Elif — Namaz Vakti, Kur'an, Kıble, Zikir & Dua",
+      "inLanguage": "tr",
+      "publisher": { "@id": "https://elifmuslim.com/#organization" }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://elifmuslim.com/#app-ios",
+      "name": "Elif: Prayer Times & Qur'an",
+      "alternateName": ["Elif", "Elif — Namaz Vakti & Kur'an", "Elif İslami Asistan"],
+      "applicationCategory": "ReferenceApplication",
+      "applicationSubCategory": "İslami uygulama — namaz vakti, Kur'an-ı Kerim, kıble, zikir, dua",
+      "operatingSystem": "iOS 16.4+",
+      "url": "https://apps.apple.com/app/id6776661502",
+      "installUrl": "https://apps.apple.com/app/id6776661502",
+      "downloadUrl": "https://apps.apple.com/app/id6776661502",
+      "softwareVersion": "1.1.0",
+      "inLanguage": ["tr", "en", "ar", "fr", "id", "bn", "ur"],
+      "author": { "@id": "https://elifmuslim.com/#organization" },
+      "publisher": { "@id": "https://elifmuslim.com/#organization" },
+      "description": "Namaz vakitleri, ezan bildirimi, kıble pusulası, Kur'an-ı Kerim (mushaf, meal, sesli dinleme, ezber), zikirmatik, dualar, ilim kütüphanesi ve kaynak gösteren \"Elif'e Sor\" yapay zekâ asistanını tek bir reklamsız uygulamada toplayan İslami yaşam asistanı. Türkiye'de vakitler Diyanet ile uyumludur; konum cihazda işlenir.",
+      "featureList": [
+        "Diyanet uyumlu namaz vakitleri ve çoklu hesaplama yöntemi",
+        "Her vakit için sesli ezan, vakit öncesi hatırlatma ve kısa bildirim tonu",
+        "Kilit ekranında canlı namaz geri sayımı (Live Activity) ve widget'lar",
+        "Kur'an-ı Kerim: mushaf modu, çoklu meal, ayet ayet sesli dinleme, ezber, hatim takibi",
+        "Kıble pusulası ve kamerayla AR kıble",
+        "Zikirmatik, namaz sonrası tesbihat, salavat ve günlük vird",
+        "Kategorili dualar, Esmâü'l-Hüsnâ ve 40 hadis",
+        "Elif'e Sor: kaynağını gösteren yapay zekâ asistanı, mezhep seçimiyle",
+        "İlmihal, Siyer, sahabe hayatları, dinî sözlük ve quizler",
+        "Çevrimdışı çalışma ve %100 reklamsız kullanım"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY",
+        "category": "Ücretsiz indirilir; isteğe bağlı Elif Premium aboneliği"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "152"
+      }
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://elifmuslim.com/#app-android",
+      "name": "Elif: Prayer Times & Qur'an",
+      "applicationCategory": "ReferenceApplication",
+      "operatingSystem": "Android",
+      "url": "https://play.google.com/store/apps/details?id=com.huzur.islamiasistan",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.huzur.islamiasistan",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.huzur.islamiasistan",
+      "inLanguage": ["tr", "en", "ar", "fr", "id", "bn", "ur"],
+      "author": { "@id": "https://elifmuslim.com/#organization" },
+      "description": "Elif'in Android sürümü: namaz vakitleri, ezan, kıble, Kur'an-ı Kerim, zikirmatik, dualar ve kaynak gösteren yapay zekâ asistanı — reklamsız.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY",
+        "category": "Ücretsiz indirilir; isteğe bağlı Elif Premium aboneliği"
+      }
+    }
+  ]
 }
 </script>
 
@@ -753,6 +839,12 @@ src="https://www.facebook.com/tr?id=1379269391054857&ev=PageView&noscript=1" alt
           <a href="#sor">Elif'e Sor</a>
           <a href="#" class="js-appstore">App Store'dan indir</a>
           <a href="#" class="js-playstore">Google Play'den indir</a>
+        </div>
+        <div class="foot-col">
+          <h4>Daha fazlası</h4>
+          <a href="sss.html">Sık Sorulan Sorular</a>
+          <a href="en/">English</a>
+          <a href="indir/">İndir</a>
         </div>
         <div class="foot-col">
           <h4>Yasal</h4>
