@@ -6,9 +6,19 @@
 <meta name="theme-color" content="#0A241D" />
 <meta name="robots" content="noindex, follow" />
 
-<title>Elif'i indir</title>
+<title>Elif'i indir — Namaz Vakti & Kur'an</title>
 <meta name="description" content="Elif — namaz vakitleri, Kur'an-ı Kerim, kıble ve günlük ayet widget'ları. %100 reklamsız." />
 
+<!-- Bu bağlantı Instagram biyografisinde ve DM'lerde paylaşılıyor: önizleme şart -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Elif" />
+<meta property="og:title" content="Elif'i indir — Namaz Vakti & Kur'an" />
+<meta property="og:description" content="Namaz vakitleri, Kur'an-ı Kerim, kıble ve her saat yenilenen ayet widget'ları. %100 reklamsız." />
+<meta property="og:url" content="https://elifmuslim.com/indir/" />
+<meta property="og:image" content="https://elifmuslim.com/assets/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="canonical" href="https://elifmuslim.com/indir/" />
 <link rel="icon" type="image/png" href="../assets/icon.png" />
 <link rel="apple-touch-icon" href="../assets/icon.png" />
 
@@ -19,9 +29,10 @@
 <style>
 /* ======================================================================
    ELIF — /indir  akıllı yönlendirme sayfası
-   Reklamlardan gelen kullanıcıyı cihazına göre doğrudan mağazaya atar.
+   Instagram biyografisindeki tek "İndir" bağlantısının ve reklamların
+   varış noktası. Cihaza göre doğru mağazaya yollar.
    Mağaza linklerini değiştirmek için en alttaki APP_STORE_URL /
-   PLAY_STORE_URL değerlerini güncelle (index.html ile aynı tutulmalı).
+   PLAY_STORE_ID değerlerini güncelle (index.html ile aynı tutulmalı).
    ====================================================================== */
 :root{
   --green:#0E7C66;
@@ -55,12 +66,12 @@ h1{
   margin:0 0 10px;
 }
 p.sub{
-  margin:0 0 28px; font-size:15.5px; line-height:1.6; color:var(--muted);
+  margin:0 0 22px; font-size:15.5px; line-height:1.6; color:var(--muted);
 }
 
 .status{
   display:flex; align-items:center; justify-content:center; gap:10px;
-  font-size:14px; color:var(--muted); margin-bottom:24px; min-height:22px;
+  font-size:14px; color:var(--muted); margin-bottom:22px; min-height:22px;
 }
 .spinner{
   width:16px; height:16px; border-radius:50%;
@@ -85,25 +96,19 @@ p.sub{
 }
 .btn svg{width:20px; height:20px; flex:none}
 
-.note{margin-top:26px; font-size:13px; line-height:1.6; color:rgba(246,243,236,.5)}
+.feats{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:8px;
+  margin:22px 0 0;
+}
+.feats span{
+  font-size:12.5px; line-height:1; padding:8px 11px; border-radius:999px;
+  background:rgba(246,243,236,.07); border:1px solid rgba(246,243,236,.14);
+  color:var(--muted);
+}
+
+.note{margin-top:22px; font-size:13px; line-height:1.6; color:rgba(246,243,236,.5)}
 .note a{color:rgba(246,243,236,.72)}
 </style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1379269391054857');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1379269391054857&ev=PageView&noscript=1" alt="" /></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 <body>
 <main class="wrap">
@@ -117,7 +122,7 @@ src="https://www.facebook.com/tr?id=1379269391054857&ev=PageView&noscript=1" alt
     <span id="statusText">Mağazaya yönlendiriliyorsun…</span>
   </div>
 
-  <div class="btns">
+  <div class="btns" id="btns">
     <a class="btn btn-primary" id="appstore" href="#">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.42 2.2-1.14 3.02-.86.99-2.27 1.76-3.42 1.66-.14-1.1.42-2.26 1.1-3 .78-.85 2.14-1.5 3.46-1.68zM20.7 17.1c-.6 1.36-.9 1.96-1.66 3.16-1.07 1.68-2.58 3.77-4.45 3.78-1.66.02-2.08-1.08-4.33-1.07-2.25.01-2.72 1.09-4.38 1.08-1.87-.02-3.3-1.91-4.37-3.58C-1.5 16.8-1.8 11.1.9 8.08c1.06-1.2 2.6-1.96 4.05-1.96 1.48 0 2.4 1.08 3.62 1.08 1.18 0 1.9-1.08 3.6-1.08 1.3 0 2.68.7 3.66 1.92-3.22 1.76-2.7 6.36.87 7.06z"/></svg>
       App Store'dan indir
@@ -128,6 +133,13 @@ src="https://www.facebook.com/tr?id=1379269391054857&ev=PageView&noscript=1" alt
     </a>
   </div>
 
+  <div class="feats" aria-hidden="true">
+    <span>🕌 Namaz vakti widget'ı</span>
+    <span>📖 Kur'an &amp; meal</span>
+    <span>🧭 Kıble</span>
+    <span>📿 Zikirmatik</span>
+  </div>
+
   <p class="note">Otomatik yönlendirme çalışmazsa yukarıdaki butona dokun.<br />
     <a href="../">elifmuslim.com</a></p>
 </main>
@@ -136,27 +148,43 @@ src="https://www.facebook.com/tr?id=1379269391054857&ev=PageView&noscript=1" alt
 /* ====================================================================
    MAĞAZA LİNKLERİ — index.html ile aynı tutulmalı.
    ==================================================================== */
-var APP_STORE_URL  = "https://apps.apple.com/app/id6776661502";
-var PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.huzur.islamiasistan";
+var APP_STORE_URL = "https://apps.apple.com/app/id6776661502";
+var PLAY_STORE_ID = "com.huzur.islamiasistan";
+
+/* --- Kaynak etiketi -------------------------------------------------
+   ?s=... ile gelen kaynak (ig-bio, ig-story, dm, reels ...) Play
+   Console → Edinme raporlarında görünsün diye referrer'a gömülür.
+   Verilmezse document.referrer'dan tahmin edilir.
+   Apple tarafına sahte parametre EKLENMEZ: App Store kampanya
+   takibi provider token (pt) ister, elimizde yok.
+   ------------------------------------------------------------------ */
+function detectSource(){
+  var q = new URLSearchParams(location.search).get('s');
+  if (q) return q.replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 40) || 'web';
+  var ref = document.referrer || '';
+  if (/instagram\.com/i.test(ref)) return 'ig-bio';
+  if (/facebook\.com/i.test(ref))  return 'fb';
+  if (/t\.co|twitter|x\.com/i.test(ref)) return 'x';
+  return 'web';
+}
+var SRC = detectSource();
+
+function playUrl(){
+  var referrer = 'utm_source=' + SRC + '&utm_medium=social&utm_campaign=indir';
+  return 'https://play.google.com/store/apps/details?id=' + PLAY_STORE_ID +
+         '&referrer=' + encodeURIComponent(referrer);
+}
 
 var appstore  = document.getElementById('appstore');
 var playstore = document.getElementById('playstore');
 appstore.href  = APP_STORE_URL;
-playstore.href = PLAY_STORE_URL;
-
-/* Meta Pixel — mağazaya gidişi ölç (StoreRedirect özel etkinliği) */
-function trackStore(platform){
-  try { if (window.fbq) fbq('trackCustom', 'StoreRedirect', { platform: platform }); } catch(e){}
-}
-appstore.addEventListener('click',  function(){ trackStore('ios'); });
-playstore.addEventListener('click', function(){ trackStore('android'); });
+playstore.href = playUrl();
 
 var ua = navigator.userAgent || "";
 var isIOS = /iPad|iPhone|iPod/.test(ua) ||
             (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); /* iPadOS */
 var isAndroid = /Android/.test(ua);
 
-var statusEl = document.getElementById('status');
 var statusText = document.getElementById('statusText');
 var spinner = document.getElementById('spinner');
 
@@ -166,17 +194,16 @@ function stopSpinner(msg){
 }
 
 if (isIOS || isAndroid) {
-  /* Butonu görsel olarak öne çıkar: iOS'ta App Store, Android'de Play üstte dursun */
+  /* Cihazın mağazası üstte ve vurgulu dursun */
   if (isAndroid) {
     playstore.className = 'btn btn-primary';
     appstore.className  = 'btn btn-secondary';
     playstore.parentNode.insertBefore(playstore, appstore);
   }
-  /* Kısa bir gecikme: sayfa görünsün, sonra mağazaya devret.
+  /* Kısa gecikme: sayfa görünsün, sonra mağazaya devret.
      Instagram/Facebook içi tarayıcıda da bu şekilde güvenilir çalışıyor. */
   setTimeout(function(){
-    trackStore(isAndroid ? 'android' : 'ios');
-    window.location.href = isAndroid ? PLAY_STORE_URL : APP_STORE_URL;
+    window.location.href = isAndroid ? playUrl() : APP_STORE_URL;
     /* Yönlendirme gerçekleşmediyse kullanıcıyı butona yönlendir */
     setTimeout(function(){
       stopSpinner('Açılmadıysa aşağıdaki butona dokun.');
