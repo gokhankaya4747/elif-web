@@ -18,6 +18,24 @@
 
   !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset group identify".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
 
+  // Trafiğin kaynağı tek alanda: ?s= (bizim etiketimiz: chatgpt, ig-bio...) →
+  // utm_source → fbclid (Meta reklamı) → yönlendiren alan adı → 'direct'.
+  // Raporda "ChatGPT reklamından kaç kişi geldi" sorusu tek sorgu olsun diye.
+  function siteSource() {
+    try {
+      var q = new URLSearchParams(location.search);
+      var s = q.get('s') || q.get('utm_source') || q.get('ref');
+      if (s) return s.replace(/[^a-zA-Z0-9_.-]/g, '').slice(0, 40);
+      if (q.get('fbclid')) return 'meta';
+      if (q.get('gclid')) return 'google';
+      var r = document.referrer ? new URL(document.referrer).hostname : '';
+      return r && r !== location.hostname ? r.replace(/^www\./, '') : 'direct';
+    } catch (e) {
+      return 'unknown';
+    }
+  }
+  window.elifSiteSource = siteSource;
+
   posthog.init(KEY, {
     api_host: HOST,
     persistence: 'memory',        // çerez yok → çerez bandı gerekmiyor
@@ -26,6 +44,8 @@
     capture_pageview: true,
     capture_pageleave: true,
     disable_session_recording: true,
+    // Yerel önizleme gerçek veriye karışmasın.
+    opt_out_capturing_by_default: /^(localhost|127\.0\.0\.1)$/.test(location.hostname),
     property_blacklist: ['$ip'],
     loaded: function (ph) {
       // Sayfa görüntülemesine dilin ve yolun yanında YÖNLENDİRENİ de yaz:
@@ -34,6 +54,7 @@
         ph.register({
           site_lang: document.documentElement.lang || 'tr',
           site_path: location.pathname,
+          site_src: siteSource(),
         });
       } catch (e) {}
     },
@@ -54,7 +75,11 @@
           : null;
       if (!store) return;
       try {
-        posthog.capture('web_store_click', { store: store, path: location.pathname });
+        posthog.capture(
+          'web_store_click',
+          { store: store, path: location.pathname, site_src: siteSource() },
+          { transport: 'sendBeacon' }
+        );
       } catch (e) {}
     },
     true

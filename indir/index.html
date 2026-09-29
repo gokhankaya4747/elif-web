@@ -171,7 +171,9 @@ function detectSource(){
 var SRC = detectSource();
 
 function playUrl(){
-  var referrer = 'utm_source=' + SRC + '&utm_medium=social&utm_campaign=indir';
+  var medium = (new URLSearchParams(location.search).get('utm_medium') || 'social')
+                 .replace(/[^a-zA-Z0-9_-]/g, '').slice(0, 20) || 'social';
+  var referrer = 'utm_source=' + SRC + '&utm_medium=' + medium + '&utm_campaign=indir';
   return 'https://play.google.com/store/apps/details?id=' + PLAY_STORE_ID +
          '&referrer=' + encodeURIComponent(referrer);
 }
@@ -204,6 +206,13 @@ if (isIOS || isAndroid) {
   /* Kısa gecikme: sayfa görünsün, sonra mağazaya devret.
      Instagram/Facebook içi tarayıcıda da bu şekilde güvenilir çalışıyor. */
   setTimeout(function(){
+    /* Otomatik yönlendirme de ölçülsün (düğmeye basılmadığı için
+       web_store_click yazılmıyordu). sendBeacon: sayfa kapanırken de gider. */
+    try {
+      if (window.posthog) posthog.capture('web_store_redirect',
+        { store: isAndroid ? 'play_store' : 'app_store', site_src: SRC, auto: true },
+        { transport: 'sendBeacon' });
+    } catch (e) {}
     window.location.href = isAndroid ? playUrl() : APP_STORE_URL;
     /* Yönlendirme gerçekleşmediyse kullanıcıyı butona yönlendir */
     setTimeout(function(){
