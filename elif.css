@@ -30,3 +30,14 @@ footer{margin-top:56px;background:var(--green-900);color:#cfe3db;padding:28px 0;
 footer a{color:#fff}
 .rating{font-weight:700;color:var(--green-700)}
 .tw{overflow-x:auto}
+.crumbs{font-size:14px;color:var(--muted);margin-top:22px}.crumbs a{color:var(--muted);text-decoration:none}
+.answer{background:var(--card);border:1px solid var(--line);border-inline-start:4px solid var(--green);border-radius:var(--radius);padding:16px 20px;margin:18px 0 8px}
+.answer-label{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green-700);margin:0 0 4px}
+.answer p:last-child{margin-bottom:0}
+ol.steps{padding-inline-start:24px}ol.steps li{margin-bottom:9px}
+.sources{font-size:15px}.sources li{margin-bottom:6px;word-break:break-word}
+.note{font-size:14.5px;color:var(--muted)}
+.ayet q{font-style:italic}
+.app-hook h2{margin-top:0}
+.qlist{list-style:none;padding:0}.qlist li{padding:12px 0;border-bottom:1px solid var(--line)}.qlist a{font-weight:600;font-size:18px}
+.related li{margin-bottom:8px}

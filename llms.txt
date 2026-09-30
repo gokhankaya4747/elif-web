@@ -94,3 +94,18 @@ Evet. Mushaf, mealler, dualar ve zikirler internet olmadan çalışır.
 - [Hesap silme](https://elifmuslim.com/hesap-silme.html)
 
 Son güncelleme: 2026-09-12
+
+## Dinî sorular (Diyanet kaynaklı kısa cevaplar)
+
+Her sayfa hükmü Hanefî mezhebi esasıyla özetler, mezhep farklarını belirtir ve Diyanet İşleri Başkanlığı Din İşleri Yüksek Kurulu fetvalarını, Diyanet ilmihallerini ve TDV İslâm Ansiklopedisi'ni kaynak gösterir.
+
+- [Kaza namazı nasıl kılınır?](https://elifmuslim.com/soru/kaza-namazi-nasil-kilinir.html): Kaza namazında yalnız farzlar ve vitir kılınır, sünnetler kaza edilmez. Niyet nasıl edilir, sıra (tertip) ne zaman gerekir, hangi vakitlerde kılınmaz? Diyanet kaynaklı adım adım cevap.
+- [Yolculukta (seferî) namaz nasıl kılınır?](https://elifmuslim.com/soru/seferi-namaz-nasil-kilinir.html): 90 km ve üzeri yolculuğa çıkan, 15 günden az kalacaksa seferîdir; dört rekâtlı farzları iki rekât kılar. Seferîliğin başlangıcı, sünnetler, namazları birleştirme (cem) ve araçta namaz — Diyanet kaynaklı cevap.
+- [Abdesti bozan şeyler nelerdir?](https://elifmuslim.com/soru/abdesti-bozan-seyler.html): Hanefî mezhebine göre abdesti bozan ve bozmayan durumlar: kan, kusma, uyku, gülme, karşı cinse dokunma, oje, yara bandı. Diyanet kaynaklı liste ve mezhep farkları.
+- [Gusül abdesti nasıl alınır?](https://elifmuslim.com/soru/gusul-abdesti-nasil-alinir.html): Guslün üç farzı: ağza su vermek, burna su çekmek ve bütün bedeni yıkamak. Sünnete uygun gusül adım adım, guslü gerektiren hâller, diş dolgusu, oje ve dövme hakkında Diyanet'in görüşü.
+- [Sehiv secdesi nasıl yapılır?](https://elifmuslim.com/soru/sehiv-secdesi-nasil-yapilir.html): Namazda yanılınca yapılan sehiv secdesi: hangi hatalarda gerekir, adım adım nasıl yapılır, rekât sayısında şüphe edilirse ne yapılır, cemaatle kılarken ve unutulursa — Diyanet kaynaklı cevap.
+- [Vitir namazı nasıl kılınır?](https://elifmuslim.com/soru/vitir-namazi-nasil-kilinir.html): Vitir namazı üç rekâttır; üçüncü rekâtta tekbir alınıp kunut duaları okunur. Hükmü, vakti, adım adım kılınışı, kunutu bilmeyen ve unutanlar için Diyanet kaynaklı cevap.
+- [Cuma namazı kaç rekât, nasıl kılınır?](https://elifmuslim.com/soru/cuma-namazi-kac-rekat.html): Cuma namazı toplam 10 rekâttır: 4 rekât ilk sünnet, 2 rekât farz, 4 rekât son sünnet. Kimlere farz olduğu, hutbe, cumayı kaçıranın ne yapacağı ve zuhr-i âhir hakkında Diyanet kaynaklı cevap.
+- [Orucu bozan ve bozmayan şeyler nelerdir?](https://elifmuslim.com/soru/orucu-bozan-seyler.html): Unutarak yemek, iğne, göz damlası, diş fırçalamak, kan vermek orucu bozar mı? Kaza ve kefaret gerektiren durumlar, sadece kaza gerektirenler ve bozmayanlar — Diyanet kaynaklı liste.
+- [Zekât kimlere verilir, kimlere verilmez?](https://elifmuslim.com/soru/zekat-kimlere-verilir.html): Zekât Tevbe 60'ta sayılan sekiz sınıfa verilir; anne-baba, çocuk-torun, eş ve zengine verilmez. Kardeşe, akrabaya, derneğe zekât verilir mi, ne zaman verilir? Diyanet kaynaklı cevap.
+- [Avrupa'da yazın yatsı ve imsak vakti nasıl belirlenir?](https://elifmuslim.com/soru/avrupada-yatsi-ve-imsak-vakti.html): Almanya, Hollanda, İngiltere gibi yüksek enlemlerde yazın şafak kaybolmadığı için yatsı ve imsak vakti takdir edilir. Diyanet'in 2021 kongresi kararları ve güncel Avrupa takvimi — kaynaklı cevap.
