@@ -172,8 +172,9 @@ var PLAY_STORE_ID = "com.huzur.islamiasistan";
    ?s=... ile gelen kaynak (ig-bio, ig-story, dm, reels ...) Play
    Console → Edinme raporlarında görünsün diye referrer'a gömülür.
    Verilmezse document.referrer'dan tahmin edilir.
-   Apple tarafına sahte parametre EKLENMEZ: App Store kampanya
-   takibi provider token (pt) ister, elimizde yok.
+   Apple: resmî kampanya bağlantısı (pt = sağlayıcı kimliği, ct =
+   kaynak) → App Store Connect → Uygulama Analizi → Kaynaklar →
+   Kampanyalar'da kurulumlar kaynağa göre görünür (16 Eki 2026).
    ------------------------------------------------------------------ */
 function detectSource(){
   var q = new URLSearchParams(location.search).get('s');
@@ -182,6 +183,7 @@ function detectSource(){
   if (/instagram\.com/i.test(ref)) return 'ig-bio';
   if (/facebook\.com/i.test(ref))  return 'fb';
   if (/t\.co|twitter|x\.com/i.test(ref)) return 'x';
+  if (/tiktok\.com/i.test(ref)) return 'tiktok';
   return 'web';
 }
 var SRC = detectSource();
@@ -194,9 +196,15 @@ function playUrl(){
          '&referrer=' + encodeURIComponent(referrer);
 }
 
+var APPLE_PT = "128743033";
+function appStoreUrl(){
+  return 'https://apps.apple.com/app/apple-store/id6776661502?pt=' + APPLE_PT +
+         '&ct=' + encodeURIComponent(SRC) + '&mt=8';
+}
+
 var appstore  = document.getElementById('appstore');
 var playstore = document.getElementById('playstore');
-appstore.href  = APP_STORE_URL;
+appstore.href  = appStoreUrl();
 playstore.href = playUrl();
 
 /* Meta Pixel — mağazaya gidişi ölç (StoreRedirect özel etkinliği).
@@ -238,7 +246,7 @@ if (isIOS || isAndroid) {
         { transport: 'sendBeacon' });
     } catch (e) {}
     trackStore(isAndroid ? 'android' : 'ios', true);
-    window.location.href = isAndroid ? playUrl() : APP_STORE_URL;
+    window.location.href = isAndroid ? playUrl() : appStoreUrl();
     /* Yönlendirme gerçekleşmediyse kullanıcıyı butona yönlendir */
     setTimeout(function(){
       stopSpinner('Açılmadıysa aşağıdaki butona dokun.');
