@@ -10,8 +10,12 @@
 <!-- WhatsApp önizlemesi: davet linki genelde WhatsApp'ta paylaşılıyor -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Elif" />
-<meta property="og:title" content="🤲 Hatim Daveti — bir cüz de sen oku" />
-<meta property="og:description" content="Boş bir cüz seç, oku ve tamamla. Uygulama ya da hesap gerekmez." />
+<!-- OG etiketleri statik: tarayıcı dil değiştirse de tarayıcı-botlar Türkçe görür; bu yüzden kısa TR · ID · EN satırı. -->
+<meta property="og:title" content="🤲 Hatim Daveti — bir cüz de sen oku · Undangan Khataman · Khatm Invite" />
+<meta property="og:description" content="Boş bir cüz seç, oku ve tamamla · Pilih satu juz kosong dan bacalah · Pick a free juz and read it. Uygulama gerekmez / Tanpa aplikasi / No app needed." />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
 <meta property="og:image" content="https://elifmuslim.com/assets/og.png" />
 <link rel="icon" type="image/png" href="../assets/icon.png" />
 <link rel="apple-touch-icon" href="../assets/icon.png" />
@@ -55,7 +59,7 @@ input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--lin
 .cell.mine{background:var(--gold);border-color:var(--gold);color:#2A1E05}
 .cell.done{background:var(--green);border-color:var(--green)}
 .legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;font-size:12px;color:var(--muted)}
-.legend b{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:5px;vertical-align:-2px;border:1px solid var(--line)}
+.legend b{display:inline-block;width:12px;height:12px;border-radius:4px;margin-inline-end:5px;vertical-align:-2px;border:1px solid var(--line)}
 .hint{font-size:13px;color:var(--muted);margin:0 0 10px}
 .btn{display:block;width:100%;text-align:center;padding:14px;border-radius:14px;border:0;font-weight:700;font-size:16px;cursor:pointer;text-decoration:none;margin-top:10px}
 .btn.primary{background:var(--green);color:#fff}
@@ -74,23 +78,44 @@ input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--lin
 .stores{display:flex;gap:8px;margin-top:12px}
 .stores a{flex:1;margin-top:0}
 .foot{text-align:center;color:var(--faint);font-size:12px;margin-top:18px;line-height:1.5}
+/* Çok dilli: Türkçe dışı dilde, çeviri uygulanana kadar statik Türkçe metni gösterme. */
+html.i18n-wait [data-i18n]{visibility:hidden}
+[dir=rtl] body{font-family:Inter,"Noto Naskh Arabic","Noto Nastaliq Urdu",Tahoma,sans-serif}
 </style>
+<script>
+/* Dil seçimi: ?l=<kod> → tarayıcı dili (in → id) → tr. Gövde betiği window.ELIF_L'yi kullanır. */
+(function(){
+  var SUP = ['tr','en','id','ar','fr','bn','ur'], L = 'tr', c = [];
+  try { c.push(new URLSearchParams(location.search).get('l') || ''); } catch(e){}
+  try { c = c.concat(navigator.languages || [], [navigator.language || '']); } catch(e){}
+  for (var i = 0; i < c.length; i++) {
+    var s = String(c[i] || '').toLowerCase().split(/[-_]/)[0];
+    if (s === 'in') s = 'id';
+    if (SUP.indexOf(s) >= 0) { L = s; break; }
+  }
+  window.ELIF_L = L;
+  var h = document.documentElement;
+  h.setAttribute('lang', L);
+  if (L === 'ar' || L === 'ur') h.setAttribute('dir', 'rtl');
+  if (L !== 'tr') h.className += ' i18n-wait';
+})();
+</script>
 <script src="/assets/analytics.js" defer></script>
 </head>
 <body>
 <div class="wrap">
   <div class="brand"><img src="../assets/icon.png" alt="" /><span>Elif</span></div>
-  <div id="root"><div class="msg">Yükleniyor…</div></div>
+  <div id="root"><div class="msg" data-i18n="loading">Yükleniyor…</div></div>
 
   <div class="card app">
     <img src="../assets/icon.png" alt="Elif" />
-    <p><strong>Cüzünü Elif'te oku</strong><br>Kur'an, namaz vakitleri ve hatim takibi tek uygulamada. Ücretsiz, reklamsız.</p>
+    <p data-i18n="app"><strong>Cüzünü Elif'te oku</strong><br>Kur'an, namaz vakitleri ve hatim takibi tek uygulamada. Ücretsiz, reklamsız.</p>
   </div>
   <div class="stores">
     <a class="btn ghost" id="ios" href="https://apps.apple.com/app/id6776661502">App Store</a>
     <a class="btn ghost" id="android" href="https://play.google.com/store/apps/details?id=com.huzur.islamiasistan&referrer=utm_source%3Dhatim-davet">Google Play</a>
   </div>
-  <div class="foot">Bu hatmi kuran kişi bir davet linki paylaştı. Elif bu sayfada yalnızca cüz seçerken yazdığın adı saklar.</div>
+  <div class="foot" data-i18n="foot">Bu hatmi kuran kişi bir davet linki paylaştı. Elif bu sayfada yalnızca cüz seçerken yazdığın adı saklar.</div>
 </div>
 
 <div class="sheet" id="sheet"><div class="panel" id="panel"></div></div>
@@ -102,7 +127,133 @@ input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--lin
   var ANON = 'sb_publishable_vTjoYkm8ibOVkpdymCY_Bw_r3lcvy8K';
   // Cüz başlangıçları (sûre, âyet) — Diyanet Kur'an portalında okumak için.
   var JUZ = [[1,1],[2,142],[2,253],[3,93],[4,24],[4,148],[5,82],[6,111],[7,88],[8,41],[9,93],[11,6],[12,53],[15,1],[17,1],[18,75],[21,1],[23,1],[25,21],[27,56],[29,46],[33,31],[36,28],[39,32],[41,47],[46,1],[51,31],[58,1],[67,1],[78,1]];
-  var KIND = {merhum:'Merhum için',kandil:'Kandil hatmi',sifa:'Şifa için',hayir:'Hayırlı bir niyet',genel:'Hatim'};
+
+  // ---- Çok dilli metinler (uygulamadaki hatimDavet çevirileriyle aynı terimler) ----
+  // Türkçe dışı dillerde "Kandil" Türkiye'ye özgü olduğundan nötr "mübarek gece hatmi" karşılığı kullanılır.
+  var I18N = {
+    tr: {
+      loading:'Yükleniyor…', notFound:'Bu davet bulunamadı. Linki kontrol et.', netErr:'Bağlantı kurulamadı. Sayfayı yenile.',
+      titleSuffix:'Hatim Daveti', doneTitle:'Hatim tamamlandı.', doneBody:'Rabbim kabul etsin, niyetinizi hayırla neticelendirsin.',
+      progress:'{done} cüz tamamlandı · {reading} cüz okunuyor',
+      hint:'Boş bir cüze dokun, adını yaz ve üstlen. Okuyunca “Tamamladım” de.',
+      you:'Sen', lgOpen:'Boş', lgReading:'Okunuyor', lgMine:'Senin', lgDone:'Tamamlandı',
+      share:'WhatsApp\'ta paylaş',
+      shareText:'🤲 {name}\nHer birimiz bir cüz okuyalım. Cüzünü buradan seç:\n{link}\n(Elif uygulamasında kod: {code})',
+      taken:'Bu cüzü başka biri almış.', retry:'Bağlantı kurulamadı, tekrar dene.',
+      claimTitle:'{n}. cüzü üstlen', claimBody:'Adın listede görünecek.', nameLabel:'Adın', namePh:'Adın',
+      claim:'Üstlen', cancel:'Vazgeç', mineTitle:'{n}. cüz senin', read:'Cüzü oku (Diyanet Kur\'an Portalı)',
+      markDone:'Okudum, tamamladım', release:'Bırak',
+      app:'<strong>Cüzünü Elif\'te oku</strong><br>Kur\'an, namaz vakitleri ve hatim takibi tek uygulamada. Ücretsiz, reklamsız.',
+      foot:'Bu hatmi kuran kişi bir davet linki paylaştı. Elif bu sayfada yalnızca cüz seçerken yazdığın adı saklar.',
+      kind:{merhum:'Merhum için',kandil:'Kandil hatmi',sifa:'Şifa için',hayir:'Hayırlı bir niyet',genel:'Hatim'}
+    },
+    id: {
+      loading:'Memuat…', notFound:'Undangan ini tidak ditemukan. Periksa kembali tautannya.', netErr:'Tidak dapat terhubung. Muat ulang halaman ini.',
+      titleSuffix:'Undangan Khataman', doneTitle:'Khataman selesai.', doneBody:'Semoga Allah menerimanya dan menyampaikan niat kalian pada kebaikan.',
+      progress:'{done} juz selesai · {reading} juz sedang dibaca',
+      hint:'Ketuk juz yang masih kosong, tulis namamu, lalu ambil. Setelah selesai membaca, ketuk “Sudah selesai kubaca”.',
+      you:'Kamu', lgOpen:'Kosong', lgReading:'Sedang dibaca', lgMine:'Milikmu', lgDone:'Selesai',
+      share:'Bagikan lewat WhatsApp',
+      shareText:'🤲 {name}\nMari masing-masing membaca satu juz. Pilih juzmu di sini:\n{link}\n(Kode di aplikasi Elif: {code})',
+      taken:'Juz ini sudah diambil orang lain.', retry:'Tidak dapat terhubung, coba lagi.',
+      claimTitle:'Ambil juz {n}', claimBody:'Namamu akan tampil di daftar.', nameLabel:'Namamu', namePh:'Namamu',
+      claim:'Ambil', cancel:'Batal', mineTitle:'Juz {n} milikmu', read:'Baca juz ini (Quran.com, terjemahan Kemenag)',
+      markDone:'Sudah selesai kubaca', release:'Lepaskan',
+      app:'<strong>Baca juzmu di Elif</strong><br>Al-Qur’an, jadwal salat, dan pelacak khataman dalam satu aplikasi. Gratis, tanpa iklan.',
+      foot:'Penyelenggara khataman ini membagikan tautan undangan. Di halaman ini Elif hanya menyimpan nama yang kamu tulis saat memilih juz.',
+      kind:{merhum:'Untuk almarhum/almarhumah',kandil:'Khataman malam mulia',sifa:'Untuk kesembuhan',hayir:'Niat kebaikan',genel:'Khataman'}
+    },
+    en: {
+      loading:'Loading…', notFound:'This invite wasn’t found. Please check the link.', netErr:'Couldn’t connect. Please refresh the page.',
+      titleSuffix:'Khatm Invite', doneTitle:'Khatm completed.', doneBody:'May Allah accept it and bring your intention to a good end.',
+      progress:'{done} juz completed · {reading} being read',
+      hint:'Tap a free juz, write your name and take it on. When you’ve read it, tap “I’ve finished it”.',
+      you:'You', lgOpen:'Free', lgReading:'Reading', lgMine:'Yours', lgDone:'Done',
+      share:'Share on WhatsApp',
+      shareText:'🤲 {name}\nLet each of us read one juz. Pick yours here:\n{link}\n(Code in the Elif app: {code})',
+      taken:'Someone else has already taken this juz.', retry:'Couldn’t connect, please try again.',
+      claimTitle:'Take juz {n}', claimBody:'Your name will appear in the list.', nameLabel:'Your name', namePh:'Your name',
+      claim:'Take it', cancel:'Cancel', mineTitle:'Juz {n} is yours', read:'Read the juz (Quran.com, Saheeh International)',
+      markDone:'I’ve finished it', release:'Release',
+      app:'<strong>Read your juz in Elif</strong><br>Qur’an, prayer times and khatm tracking in one app. Free, no ads.',
+      foot:'The person who started this khatm shared an invite link. On this page Elif only stores the name you type when picking a juz.',
+      kind:{merhum:'For the deceased',kandil:'Holy-night khatm',sifa:'For healing',hayir:'A good intention',genel:'Khatm'}
+    },
+    fr: {
+      loading:'Chargement…', notFound:'Invitation introuvable. Vérifiez le lien.', netErr:'Connexion impossible. Actualisez la page.',
+      titleSuffix:'Invitation à un khatm', doneTitle:'Khatm terminé.', doneBody:'Qu’Allah l’accepte et mène votre intention vers le bien.',
+      progress:'{done} juz terminés · {reading} en cours de lecture',
+      hint:'Touchez un juz libre, écrivez votre nom et prenez-le. Une fois lu, touchez « Je l’ai terminé ».',
+      you:'Vous', lgOpen:'Libre', lgReading:'En lecture', lgMine:'Le vôtre', lgDone:'Terminé',
+      share:'Partager sur WhatsApp',
+      shareText:'🤲 {name}\nQue chacun de nous lise un juz. Choisissez le vôtre ici :\n{link}\n(Code dans l’application Elif : {code})',
+      taken:'Quelqu’un a déjà pris ce juz.', retry:'Connexion impossible, réessayez.',
+      claimTitle:'Prendre le juz {n}', claimBody:'Votre nom apparaîtra dans la liste.', nameLabel:'Votre nom', namePh:'Votre nom',
+      claim:'Le prendre', cancel:'Annuler', mineTitle:'Le juz {n} est à vous', read:'Lire le juz (Quran.com, trad. Hamidullah)',
+      markDone:'Je l’ai terminé', release:'Libérer',
+      app:'<strong>Lisez votre juz dans Elif</strong><br>Coran, horaires de prière et suivi du khatm dans une seule application. Gratuite, sans publicité.',
+      foot:'La personne qui a lancé ce khatm a partagé un lien d’invitation. Sur cette page, Elif ne conserve que le nom que vous saisissez en choisissant un juz.',
+      kind:{merhum:'Pour un défunt',kandil:'Khatm d’une nuit bénie',sifa:'Pour la guérison',hayir:'Pour une bonne intention',genel:'Khatm'}
+    },
+    ar: {
+      loading:'جارٍ التحميل…', notFound:'لم يُعثر على هذه الدعوة. تحقّق من الرابط.', netErr:'تعذّر الاتصال. حدّث الصفحة.',
+      titleSuffix:'دعوة ختمة', doneTitle:'اكتملت الختمة.', doneBody:'تقبّل الله، وجعل نيّتكم إلى خير.',
+      progress:'اكتمل {done} جزءًا · {reading} قيد القراءة',
+      hint:'اضغط على جزء فارغ، واكتب اسمك وتولَّه. وبعد القراءة اضغط «قرأته وأتممته».',
+      you:'أنت', lgOpen:'فارغ', lgReading:'قيد القراءة', lgMine:'لك', lgDone:'مكتمل',
+      share:'شارك عبر واتساب',
+      shareText:'🤲 {name}\nليقرأ كل واحد منا جزءًا. اختر جزءك من هنا:\n{link}\n(الرمز في تطبيق إليف: {code})',
+      taken:'تولّى شخص آخر هذا الجزء.', retry:'تعذّر الاتصال، حاول مرة أخرى.',
+      claimTitle:'تولَّ الجزء {n}', claimBody:'سيظهر اسمك في القائمة.', nameLabel:'اسمك', namePh:'اسمك',
+      claim:'تولَّه', cancel:'إلغاء', mineTitle:'الجزء {n} لك', read:'اقرأ الجزء (Quran.com)',
+      markDone:'قرأته وأتممته', release:'اتركه',
+      app:'<strong>اقرأ جزءك في إليف</strong><br>القرآن ومواقيت الصلاة ومتابعة الختمة في تطبيق واحد. مجاني وبلا إعلانات.',
+      foot:'شارك منظّم هذه الختمة رابط دعوة. لا يحفظ إليف في هذه الصفحة إلا الاسم الذي تكتبه عند اختيار الجزء.',
+      kind:{merhum:'على روح المتوفى',kandil:'ختمة ليلة مباركة',sifa:'للشفاء',hayir:'لنيّة خير',genel:'ختمة'}
+    },
+    bn: {
+      loading:'লোড হচ্ছে…', notFound:'এই দাওয়াত পাওয়া যায়নি। লিংকটি যাচাই করুন।', netErr:'সংযোগ করা যায়নি। পেজটি রিফ্রেশ করুন।',
+      titleSuffix:'খতম দাওয়াত', doneTitle:'খতম সম্পন্ন হয়েছে।', doneBody:'আল্লাহ কবুল করুন এবং আপনাদের নিয়ত কল্যাণে পূর্ণ করুন।',
+      progress:'{done} পারা সম্পন্ন · {reading}টি পড়া হচ্ছে',
+      hint:'একটি খালি পারায় চাপ দিন, আপনার নাম লিখে দায়িত্ব নিন। পড়া শেষ হলে “পড়ে শেষ করেছি” চাপুন।',
+      you:'আপনি', lgOpen:'খালি', lgReading:'পড়া হচ্ছে', lgMine:'আপনার', lgDone:'সম্পন্ন',
+      share:'WhatsApp-এ শেয়ার করুন',
+      shareText:'🤲 {name}\nআমরা প্রত্যেকে একটি করে পারা পড়ি। এখানে আপনার পারা বেছে নিন:\n{link}\n(এলিফ অ্যাপে কোড: {code})',
+      taken:'এই পারাটি অন্য কেউ নিয়েছেন।', retry:'সংযোগ করা যায়নি, আবার চেষ্টা করুন।',
+      claimTitle:'{n} নম্বর পারা নিন', claimBody:'আপনার নাম তালিকায় দেখা যাবে।', nameLabel:'আপনার নাম', namePh:'আপনার নাম',
+      claim:'নিন', cancel:'বাতিল', mineTitle:'{n} নম্বর পারা আপনার', read:'পারা পড়ুন (Quran.com)',
+      markDone:'পড়ে শেষ করেছি', release:'ছেড়ে দিন',
+      app:'<strong>এলিফে আপনার পারা পড়ুন</strong><br>কুরআন, নামাজের সময় ও খতম ট্র্যাকিং এক অ্যাপে। বিনামূল্যে, বিজ্ঞাপন ছাড়া।',
+      foot:'এই খতমের আয়োজক একটি দাওয়াত লিংক শেয়ার করেছেন। এই পেজে এলিফ শুধু পারা বেছে নেওয়ার সময় আপনার লেখা নামটি সংরক্ষণ করে।',
+      kind:{merhum:'মরহুমের জন্য',kandil:'পবিত্র রাতের খতম',sifa:'শিফার জন্য',hayir:'নেক নিয়তে',genel:'খতম'}
+    },
+    ur: {
+      loading:'لوڈ ہو رہا ہے…', notFound:'یہ دعوت نہیں ملی۔ لنک چیک کریں۔', netErr:'رابطہ نہیں ہو سکا۔ صفحہ ریفریش کریں۔',
+      titleSuffix:'ختم کی دعوت', doneTitle:'ختم مکمل ہوا۔', doneBody:'اللہ قبول فرمائے اور آپ کی نیت کو خیر سے پورا کرے۔',
+      progress:'{done} پارے مکمل · {reading} پڑھے جا رہے ہیں',
+      hint:'کسی خالی پارے پر ٹیپ کریں، اپنا نام لکھیں اور ذمہ لیں۔ پڑھ لینے کے بعد «پڑھ لیا، مکمل» پر ٹیپ کریں۔',
+      you:'آپ', lgOpen:'خالی', lgReading:'پڑھا جا رہا ہے', lgMine:'آپ کا', lgDone:'مکمل',
+      share:'واٹس ایپ پر شیئر کریں',
+      shareText:'🤲 {name}\nہم میں سے ہر ایک ایک پارہ پڑھے۔ اپنا پارہ یہاں سے چنیں:\n{link}\n(ایلف ایپ میں کوڈ: {code})',
+      taken:'یہ پارہ کوئی اور لے چکا ہے۔', retry:'رابطہ نہیں ہو سکا، دوبارہ کوشش کریں۔',
+      claimTitle:'پارہ {n} لیں', claimBody:'آپ کا نام فہرست میں دکھے گا۔', nameLabel:'آپ کا نام', namePh:'آپ کا نام',
+      claim:'لیں', cancel:'منسوخ', mineTitle:'پارہ {n} آپ کا ہے', read:'پارہ پڑھیں (Quran.com، جالندھری ترجمہ)',
+      markDone:'پڑھ لیا، مکمل', release:'چھوڑ دیں',
+      app:'<strong>اپنا پارہ ایلف میں پڑھیں</strong><br>قرآن، نماز کے اوقات اور ختم کا حساب ایک ہی ایپ میں۔ مفت، بغیر اشتہارات۔',
+      foot:'اس ختم کے منتظم نے دعوتی لنک شیئر کیا ہے۔ اس صفحے پر ایلف صرف وہ نام محفوظ کرتا ہے جو آپ پارہ چنتے وقت لکھتے ہیں۔',
+      kind:{merhum:'مرحوم کے لیے',kandil:'مبارک رات کا ختم',sifa:'شفا کے لیے',hayir:'نیک نیت کے لیے',genel:'ختم'}
+    }
+  };
+  var L = I18N[window.ELIF_L] ? window.ELIF_L : 'tr';
+  var D = I18N[L];
+  function t(k, v){ var s = D[k] != null ? D[k] : I18N.tr[k]; if (v) for (var x in v) s = s.split('{'+x+'}').join(v[x]); return s; }
+  // Statik metinler (çeviri metinleri bizim; HTML içerebilir, kullanıcı girdisi değil).
+  Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function(el){ el.innerHTML = t(el.getAttribute('data-i18n')); });
+  document.documentElement.className = document.documentElement.className.replace(/\s*i18n-wait/, '');
+  if (L !== 'tr') document.title = t('titleSuffix') + ' — Elif';
+  // Okuma linki: Türkçe → Diyanet Kur'an Portalı (sûre/âyet); diğer diller → quran.com cüz sayfası + o dilin meali.
+  var QC_TR = { en:20, id:33, fr:31, bn:161, ur:234 }; // Saheeh, Kemenag, Hamidullah, Taisirul Quran, Jalandhari
+  var QC_LOC = { id:'id/', ar:'ar/', fr:'fr/', bn:'bn/', ur:'ur/' };
 
   var root = document.getElementById('root');
   var sheet = document.getElementById('sheet'), panel = document.getElementById('panel');
@@ -120,37 +271,42 @@ input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--lin
   }
   var myName = store('elif_hd_name') || '';
 
-  function track(ev, props){ try { if (window.posthog) posthog.capture(ev, Object.assign({code: code}, props||{})); } catch(e){} }
+  function track(ev, props){ try { if (window.posthog) posthog.capture(ev, Object.assign({code: code, lang: L}, props||{})); } catch(e){} }
 
   function rpc(fn, body){
     return fetch(SB + fn, { method:'POST', headers:{ 'apikey':ANON, 'Authorization':'Bearer '+ANON, 'Content-Type':'application/json' }, body: JSON.stringify(body) })
       .then(function(r){ return r.json().then(function(j){ if (!r.ok) throw j; return j; }); });
   }
   function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
-  function readUrl(j){ var p = JUZ[j-1]; return 'https://kuran.diyanet.gov.tr/mushaf/kuran-meal-1/sure-suresi-'+p[0]+'/ayet-'+p[1]+'/diyanet-isleri-meali-yeni-1'; }
+  function readUrl(j){
+    if (L === 'tr') { var p = JUZ[j-1]; return 'https://kuran.diyanet.gov.tr/mushaf/kuran-meal-1/sure-suresi-'+p[0]+'/ayet-'+p[1]+'/diyanet-isleri-meali-yeni-1'; }
+    return 'https://quran.com/' + (QC_LOC[L] || '') + 'juz/' + j + (QC_TR[L] ? '?translations=' + QC_TR[L] : '');
+  }
 
   var state = null;
   function render(){
-    if (!state) { root.innerHTML = '<div class="msg">Bu davet bulunamadı. Linki kontrol et.</div>'; return; }
+    if (!state) { root.innerHTML = '<div class="msg">'+esc(t('notFound'))+'</div>'; return; }
     var done = 0, reading = 0;
     state.juz.forEach(function(j){ if (j.status==='done') done++; else if (j.status==='reading') reading++; });
-    document.title = state.name + ' — Hatim Daveti';
+    document.title = state.name + ' — ' + t('titleSuffix');
     var h = '<h1>🤲 '+esc(state.name)+'</h1>';
-    h += '<div class="ded">'+esc(KIND[state.kind]||'')+(state.dedication? ' · '+esc(state.dedication):'')+'</div>';
-    if (done >= 30) h += '<div class="done-banner"><b>Hatim tamamlandı.</b><br>Rabbim kabul etsin, niyetinizi hayırla neticelendirsin.</div>';
-    h += '<div class="card"><div class="big">'+done+'<small>/30</small></div><div class="sub">'+done+' cüz tamamlandı · '+reading+' cüz okunuyor</div><div class="bar"><i style="width:'+(done/30*100)+'%"></i></div></div>';
-    h += '<div class="card"><p class="hint">Boş bir cüze dokun, adını yaz ve üstlen. Okuyunca “Tamamladım” de.</p><div class="grid">';
+    h += '<div class="ded">'+esc(D.kind[state.kind]||'')+(state.dedication? ' · '+esc(state.dedication):'')+'</div>';
+    if (done >= 30) h += '<div class="done-banner"><b>'+esc(t('doneTitle'))+'</b><br>'+esc(t('doneBody'))+'</div>';
+    h += '<div class="card"><div class="big">'+done+'<small>/30</small></div><div class="sub">'+esc(t('progress', {done: done, reading: reading}))+'</div><div class="bar"><i style="width:'+(done/30*100)+'%"></i></div></div>';
+    h += '<div class="card"><p class="hint">'+esc(t('hint'))+'</p><div class="grid">';
     state.juz.forEach(function(j){
       var cls = 'cell ' + (j.status==='done' ? 'done' : j.status==='reading' ? (j.mine?'mine':'reading') : '');
-      var label = j.status==='done' ? '✓' : (j.status==='reading' ? esc(j.mine ? 'Sen' : (j.name||'')) : '');
+      var label = j.status==='done' ? '✓' : (j.status==='reading' ? esc(j.mine ? t('you') : (j.name||'')) : '');
       h += '<button class="'+cls+'" data-j="'+j.juz+'">'+j.juz+'<em>'+label+'</em></button>';
     });
-    h += '</div><div class="legend"><span><b></b>Boş</span><span><b style="background:var(--gold-soft);border-color:var(--gold)"></b>Okunuyor</span><span><b style="background:var(--gold)"></b>Senin</span><span><b style="background:var(--green)"></b>Tamamlandı</span></div></div>';
-    h += '<button class="btn primary" id="share">WhatsApp\'ta paylaş</button>';
+    h += '</div><div class="legend"><span><b></b>'+esc(t('lgOpen'))+'</span><span><b style="background:var(--gold-soft);border-color:var(--gold)"></b>'+esc(t('lgReading'))+'</span><span><b style="background:var(--gold)"></b>'+esc(t('lgMine'))+'</span><span><b style="background:var(--green)"></b>'+esc(t('lgDone'))+'</span></div></div>';
+    h += '<button class="btn primary" id="share">'+esc(t('share'))+'</button>';
     root.innerHTML = h;
     Array.prototype.forEach.call(root.querySelectorAll('.cell'), function(b){ b.addEventListener('click', function(){ onCell(+b.getAttribute('data-j')); }); });
     document.getElementById('share').addEventListener('click', function(){
-      var text = '🤲 '+state.name+'\nHer birimiz bir cüz okuyalım. Cüzünü buradan seç:\n'+location.origin+'/h/?c='+state.code+'\n(Elif uygulamasında kod: '+state.code+')';
+      // Paylaşılan link bu sayfanın dilini taşır (Türkçe varsayılan olduğundan tr'de eklenmez).
+      var link = location.origin+'/h/?c='+state.code+(L !== 'tr' ? '&l='+L : '');
+      var text = t('shareText', {name: state.name, link: link, code: state.code});
       track('hatim_davet_web_share');
       if (navigator.share) navigator.share({ text: text }).catch(function(){});
       else window.open('https://wa.me/?text='+encodeURIComponent(text), '_blank');
@@ -166,7 +322,7 @@ input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--lin
       .then(function(s){ state = s; render(); closeSheet(); track('hatim_davet_web_juz', { status: status }); })
       .catch(function(err){
         closeSheet();
-        alert(err && /taken/.test(err.message||'') ? 'Bu cüzü başka biri almış.' : 'Bağlantı kurulamadı, tekrar dene.');
+        alert(err && /taken/.test(err.message||'') ? t('taken') : t('retry'));
         load();
       });
   }
@@ -174,7 +330,7 @@ input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--lin
   function onCell(j){
     var c = state.juz[j-1];
     if (c.status === 'open') {
-      openSheet('<h2>'+j+'. cüzü üstlen</h2><p class="hint">Adın listede görünecek.</p><label>Adın</label><input id="nm" maxlength="40" value="'+esc(myName)+'" placeholder="Adın" /><button class="btn primary" id="ok">Üstlen</button><button class="btn ghost" id="cx">Vazgeç</button>');
+      openSheet('<h2>'+esc(t('claimTitle', {n: j}))+'</h2><p class="hint">'+esc(t('claimBody'))+'</p><label>'+esc(t('nameLabel'))+'</label><input id="nm" maxlength="40" value="'+esc(myName)+'" placeholder="'+esc(t('namePh'))+'" /><button class="btn primary" id="ok">'+esc(t('claim'))+'</button><button class="btn ghost" id="cx">'+esc(t('cancel'))+'</button>');
       document.getElementById('cx').onclick = closeSheet;
       document.getElementById('ok').onclick = function(){
         var n = (document.getElementById('nm').value||'').trim();
@@ -183,19 +339,19 @@ input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--lin
         setJuz(j, 'reading', myName);
       };
     } else if (c.mine && c.status === 'reading') {
-      openSheet('<h2>'+j+'. cüz senin</h2><a class="btn gold" target="_blank" rel="noopener" href="'+readUrl(j)+'">Cüzü oku (Diyanet Kur\'an Portalı)</a><button class="btn primary" id="dn">Okudum, tamamladım</button><button class="btn ghost" id="rl">Bırak</button>');
+      openSheet('<h2>'+esc(t('mineTitle', {n: j}))+'</h2><a class="btn gold" target="_blank" rel="noopener" href="'+readUrl(j)+'">'+esc(t('read'))+'</a><button class="btn primary" id="dn">'+esc(t('markDone'))+'</button><button class="btn ghost" id="rl">'+esc(t('release'))+'</button>');
       document.getElementById('dn').onclick = function(){ setJuz(j, 'done'); };
       document.getElementById('rl').onclick = function(){ setJuz(j, 'open'); };
     } else if (c.mine && c.status === 'done') {
       window.open(readUrl(j), '_blank');
     } else {
-      alert('Bu cüzü başka biri almış.');
+      alert(t('taken'));
     }
   }
 
   function load(){
     if (!code) { state = null; render(); return; }
-    rpc('ghp_state', { p_code: code, p_token: token }).then(function(s){ state = s; render(); }).catch(function(){ root.innerHTML = '<div class="msg">Bağlantı kurulamadı. Sayfayı yenile.</div>'; });
+    rpc('ghp_state', { p_code: code, p_token: token }).then(function(s){ state = s; render(); }).catch(function(){ root.innerHTML = '<div class="msg">'+esc(t('netErr'))+'</div>'; });
   }
   load();
   track('hatim_davet_web_view');

@@ -9,8 +9,12 @@
 <meta name="description" content="Ailecek namaz, hatim ve dua. Elif'te ailene katıl." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Elif" />
-<meta property="og:title" content="👨‍👩‍👧 Elif'te ailene katıl" />
-<meta property="og:description" content="Ailecek namaz, hatim ve dua — birbirinizi teşvik edin." />
+<!-- OG etiketleri statik: botlar dil seçemez; bu yüzden kısa TR · ID · EN satırı. -->
+<meta property="og:title" content="👨‍👩‍👧 Elif'te ailene katıl · Gabung keluargamu · Join your family" />
+<meta property="og:description" content="Ailecek namaz, hatim ve dua · Salat, khataman, dan doa bersama keluarga · Prayer, khatm and dua together as a family" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
 <meta property="og:image" content="https://elifmuslim.com/assets/og.png" />
 <link rel="icon" type="image/png" href="../assets/icon.png" />
 <link rel="apple-touch-icon" href="../assets/icon.png" />
@@ -40,39 +44,118 @@ body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans
 h1{font-family:Fraunces,serif;font-weight:600;font-size:26px;line-height:1.25;text-align:center;margin:8px 0 8px}
 p.lead{text-align:center;color:var(--muted);font-size:15px;line-height:1.5;margin:0 0 20px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
-.code{font-family:Fraunces,serif;font-size:38px;letter-spacing:6px;text-align:center;color:var(--gold)}
+.code{font-family:Fraunces,serif;font-size:38px;letter-spacing:6px;text-align:center;color:var(--gold);direction:ltr}
 .codelabel{text-align:center;font-size:13px;color:var(--muted);margin-bottom:4px}
 .btn{display:block;width:100%;text-align:center;padding:14px;border-radius:14px;border:0;font-weight:700;font-size:16px;cursor:pointer;text-decoration:none;margin-top:10px}
 .primary{background:var(--green);color:#fff}
 .ghost{background:rgba(255,255,255,.08);color:var(--cream)}
-ol{color:var(--muted);font-size:14px;line-height:1.6;padding-left:20px;margin:14px 0 0}
+ol{color:var(--muted);font-size:14px;line-height:1.6;padding-inline-start:20px;margin:14px 0 0}
 .copy{background:none;border:0;color:var(--gold);font-weight:600;font-size:14px;cursor:pointer;display:block;margin:8px auto 0}
 .foot{text-align:center;color:var(--faint);font-size:12px;margin-top:26px;line-height:1.5}
+/* Çok dilli: Türkçe dışı dilde, çeviri uygulanana kadar statik Türkçe metni gösterme. */
+html.i18n-wait [data-i18n]{visibility:hidden}
+[dir=rtl] body{font-family:Inter,"Noto Naskh Arabic","Noto Nastaliq Urdu",Tahoma,sans-serif}
 </style>
+<script>
+/* Dil seçimi: ?l=<kod> → tarayıcı dili (in → id) → tr. Gövde betiği window.ELIF_L'yi kullanır. */
+(function(){
+  var SUP = ['tr','en','id','ar','fr','bn','ur'], L = 'tr', c = [];
+  try { c.push(new URLSearchParams(location.search).get('l') || ''); } catch(e){}
+  try { c = c.concat(navigator.languages || [], [navigator.language || '']); } catch(e){}
+  for (var i = 0; i < c.length; i++) {
+    var s = String(c[i] || '').toLowerCase().split(/[-_]/)[0];
+    if (s === 'in') s = 'id';
+    if (SUP.indexOf(s) >= 0) { L = s; break; }
+  }
+  window.ELIF_L = L;
+  var h = document.documentElement;
+  h.setAttribute('lang', L);
+  if (L === 'ar' || L === 'ur') h.setAttribute('dir', 'rtl');
+  if (L !== 'tr') h.className += ' i18n-wait';
+})();
+</script>
 </head>
 <body>
 <div class="wrap">
   <div class="brand"><img src="../assets/icon.png" alt="" /><span>Elif</span></div>
   <div class="emoji">👨‍👩‍👧‍👦</div>
-  <h1>Ailene katılmaya davet edildin</h1>
-  <p class="lead">Elif'te ailecek namaz, hatim ve dua: kim bugün kaç vakit kıldı görün, birbirinize dua gönderin.</p>
+  <h1 data-i18n="h1">Ailene katılmaya davet edildin</h1>
+  <p class="lead" data-i18n="lead">Elif'te ailecek namaz, hatim ve dua: kim bugün kaç vakit kıldı görün, birbirinize dua gönderin.</p>
 
   <div class="card">
-    <div class="codelabel">Aile kodu</div>
+    <div class="codelabel" data-i18n="codeLabel">Aile kodu</div>
     <div class="code" id="code">——————</div>
-    <button class="copy" id="copy" type="button">Kodu kopyala</button>
-    <a class="btn primary" id="open" href="#">Elif'te aç</a>
-    <a class="btn ghost" id="store" href="https://elifmuslim.com/indir/">Elif'i indir (ücretsiz)</a>
+    <button class="copy" id="copy" type="button" data-i18n="copy">Kodu kopyala</button>
+    <a class="btn primary" id="open" href="#" data-i18n="open">Elif'te aç</a>
+    <a class="btn ghost" id="store" href="https://elifmuslim.com/indir/" data-i18n="store">Elif'i indir (ücretsiz)</a>
     <ol>
-      <li>Elif'i indir ve aç.</li>
-      <li>Ara ya da Keşfet'ten <b>Aile Modu</b>'na gir.</li>
-      <li>Kodu yazıp <b>Katıl</b>'a dokun.</li>
+      <li data-i18n="s1">Elif'i indir ve aç.</li>
+      <li data-i18n="s2">Ara ya da Keşfet'ten <b>Aile Modu</b>'na gir.</li>
+      <li data-i18n="s3">Kodu yazıp <b>Katıl</b>'a dokun.</li>
     </ol>
   </div>
-  <p class="foot">Aile bilgileri yalnız aile üyelerine görünür. Hesap gerekmez.</p>
+  <p class="foot" data-i18n="foot">Aile bilgileri yalnız aile üyelerine görünür. Hesap gerekmez.</p>
 </div>
 <script>
 (function () {
+  // ---- Çok dilli metinler (tr = sayfadaki statik metin; diğerleri uygulamanın aile çevirileriyle aynı terimler) ----
+  var I18N = {
+    tr: { title:'Aile Daveti — Elif', copied:'Kopyalandı ✓' },
+    id: {
+      title:'Undangan Keluarga — Elif', h1:'Kamu diundang bergabung dengan keluargamu',
+      lead:'Salat, khataman, dan doa bersama keluarga di Elif: lihat berapa waktu salat yang sudah dikerjakan masing-masing hari ini, lalu saling kirim doa.',
+      codeLabel:'Kode keluarga', copy:'Salin kode', copied:'Tersalin ✓', open:'Buka di Elif', store:'Unduh Elif (gratis)',
+      s1:'Unduh Elif lalu buka.', s2:'Masuk ke <b>Mode Keluarga</b> lewat pencarian atau tab Jelajahi.', s3:'Tulis kodenya, lalu ketuk <b>Gabung</b>.',
+      foot:'Info keluarga hanya terlihat oleh anggota keluarga. Tanpa akun.'
+    },
+    en: {
+      title:'Family Invite — Elif', h1:'You’ve been invited to join your family',
+      lead:'Prayer, khatm and dua together as a family in Elif: see how many prayers everyone has prayed today and send each other duas.',
+      codeLabel:'Family code', copy:'Copy code', copied:'Copied ✓', open:'Open in Elif', store:'Get Elif (free)',
+      s1:'Download and open Elif.', s2:'Go to <b>Family Mode</b> via Search or Discover.', s3:'Enter the code and tap <b>Join</b>.',
+      foot:'Family info is visible only to family members. No account needed.'
+    },
+    fr: {
+      title:'Invitation familiale — Elif', h1:'Vous êtes invité(e) à rejoindre votre famille',
+      lead:'Prière, khatm et dou‘a en famille dans Elif : voyez combien de prières chacun a accomplies aujourd’hui et envoyez-vous des dou‘as.',
+      codeLabel:'Code famille', copy:'Copier le code', copied:'Copié ✓', open:'Ouvrir dans Elif', store:'Télécharger Elif (gratuit)',
+      s1:'Téléchargez et ouvrez Elif.', s2:'Allez dans <b>Mode Famille</b> via la recherche ou Découvrir.', s3:'Saisissez le code et touchez <b>Rejoindre</b>.',
+      foot:'Les informations de la famille ne sont visibles que par ses membres. Aucun compte requis.'
+    },
+    ar: {
+      title:'دعوة عائلية — إليف', h1:'دُعيتَ للانضمام إلى عائلتك',
+      lead:'الصلاة والختمة والدعاء معًا كعائلة في إليف: اعرفوا كم صلاةً صلّى كلٌّ منكم اليوم، وتبادلوا الدعاء.',
+      codeLabel:'رمز العائلة', copy:'انسخ الرمز', copied:'تم النسخ ✓', open:'افتح في إليف', store:'حمّل إليف (مجانًا)',
+      s1:'حمّل إليف وافتحه.', s2:'ادخل إلى <b>وضع العائلة</b> من البحث أو من «استكشف».', s3:'اكتب الرمز واضغط <b>انضم</b>.',
+      foot:'معلومات العائلة لا يراها إلا أفرادها. لا حاجة إلى حساب.'
+    },
+    bn: {
+      title:'পরিবার দাওয়াত — এলিফ', h1:'আপনাকে পরিবারে যোগ দিতে আমন্ত্রণ জানানো হয়েছে',
+      lead:'এলিফে পরিবারের সাথে নামাজ, খতম ও দোয়া: আজ কে কত ওয়াক্ত নামাজ পড়েছেন দেখুন, একে অপরকে দোয়া পাঠান।',
+      codeLabel:'পরিবার কোড', copy:'কোড কপি করুন', copied:'কপি হয়েছে ✓', open:'এলিফে খুলুন', store:'এলিফ ডাউনলোড করুন (বিনামূল্যে)',
+      s1:'এলিফ ডাউনলোড করে খুলুন।', s2:'সার্চ বা আবিষ্কার থেকে <b>পরিবার মোড</b>-এ যান।', s3:'কোডটি লিখে <b>যোগ দিন</b> চাপুন।',
+      foot:'পরিবারের তথ্য শুধু পরিবারের সদস্যরা দেখতে পান। অ্যাকাউন্ট লাগবে না।'
+    },
+    ur: {
+      title:'فیملی دعوت — ایلف', h1:'آپ کو اپنی فیملی میں شامل ہونے کی دعوت دی گئی ہے',
+      lead:'ایلف میں گھر والوں کے ساتھ نماز، ختم اور دعا: دیکھیں آج کس نے کتنی نمازیں پڑھیں، اور ایک دوسرے کو دعائیں بھیجیں۔',
+      codeLabel:'فیملی کوڈ', copy:'کوڈ کاپی کریں', copied:'کاپی ہو گیا ✓', open:'ایلف میں کھولیں', store:'ایلف ڈاؤن لوڈ کریں (مفت)',
+      s1:'ایلف ڈاؤن لوڈ کر کے کھولیں۔', s2:'تلاش یا دریافت سے <b>فیملی موڈ</b> میں جائیں۔', s3:'کوڈ لکھ کر <b>شامل ہوں</b> پر ٹیپ کریں۔',
+      foot:'فیملی کی معلومات صرف فیملی کے افراد کو نظر آتی ہیں۔ اکاؤنٹ کی ضرورت نہیں۔'
+    }
+  };
+  var L = I18N[window.ELIF_L] ? window.ELIF_L : 'tr';
+  var D = I18N[L];
+  // Statik metinler (çeviri metinleri bizim; HTML içerebilir, kullanıcı girdisi değil). tr'de dokunulmaz.
+  if (L !== 'tr') {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function (el) {
+      var k = el.getAttribute('data-i18n');
+      if (D[k] != null) el.innerHTML = D[k];
+    });
+    document.title = D.title;
+  }
+  document.documentElement.className = document.documentElement.className.replace(/\s*i18n-wait/, '');
+
   var m = /[?&]c=([A-Za-z0-9]{4,8})/.exec(location.search);
   var code = m ? m[1].toUpperCase() : '';
   var el = document.getElementById('code');
@@ -86,7 +169,7 @@ ol{color:var(--muted);font-size:14px;line-height:1.6;padding-left:20px;margin:14
   document.getElementById('store').setAttribute('href', store);
   document.getElementById('copy').addEventListener('click', function () {
     if (!code) return;
-    try { navigator.clipboard.writeText(code); this.textContent = 'Kopyalandı ✓'; } catch (e) {}
+    try { navigator.clipboard.writeText(code); this.textContent = D.copied; } catch (e) {}
   });
 })();
 </script>
