@@ -196,6 +196,21 @@ function playUrl(){
          '&referrer=' + encodeURIComponent(referrer);
 }
 
+/* TikTok (ve benzeri) uygulama içi tarayıcıda https Play bağlantısı mağaza
+   uygulamasını açmayıp Play'in web sayfasını webview içinde gösteriyor:
+   27 Eki 2026'da TikTok'tan 4.323 Play yönlendirmesine karşılık 0 kurulum
+   ölçüldü. Bu tarayıcılarda Android intent bağlantısı Play Store uygulamasını
+   doğrudan açar; açamazsa browser_fallback_url ile eski https bağlantısına düşer.
+   Normal tarayıcılar (Chrome, Instagram/Facebook) eskisi gibi https kullanır. */
+var IN_APP_NO_STORE = /BytedanceWebview|musical_ly|TikTok|trill_/i.test(navigator.userAgent || '');
+function playLaunchUrl(){
+  if (!IN_APP_NO_STORE || !/Android/.test(navigator.userAgent || '')) return playUrl();
+  var referrer = playUrl().split('&referrer=')[1] || '';
+  return 'intent://details?id=' + PLAY_STORE_ID + '&referrer=' + referrer +
+         '#Intent;scheme=market;package=com.android.vending;' +
+         'S.browser_fallback_url=' + encodeURIComponent(playUrl()) + ';end';
+}
+
 var APPLE_PT = "128743033";
 function appStoreUrl(){
   return 'https://apps.apple.com/app/apple-store/id6776661502?pt=' + APPLE_PT +
@@ -205,7 +220,7 @@ function appStoreUrl(){
 var appstore  = document.getElementById('appstore');
 var playstore = document.getElementById('playstore');
 appstore.href  = appStoreUrl();
-playstore.href = playUrl();
+playstore.href = playLaunchUrl();
 
 /* Meta Pixel — mağazaya gidişi ölç (StoreRedirect özel etkinliği).
    15 Eyl'de (a1e9982) yanlışlıkla silinmişti, 29 Eyl'de geri geldi. */
@@ -242,11 +257,11 @@ if (isIOS || isAndroid) {
        web_store_click yazılmıyordu). sendBeacon: sayfa kapanırken de gider. */
     try {
       if (window.posthog) posthog.capture('web_store_redirect',
-        { store: isAndroid ? 'play_store' : 'app_store', site_src: SRC, auto: true },
+        { store: isAndroid ? 'play_store' : 'app_store', site_src: SRC, auto: true, in_app_intent: IN_APP_NO_STORE && isAndroid },
         { transport: 'sendBeacon' });
     } catch (e) {}
     trackStore(isAndroid ? 'android' : 'ios', true);
-    window.location.href = isAndroid ? playUrl() : appStoreUrl();
+    window.location.href = isAndroid ? playLaunchUrl() : appStoreUrl();
     /* Yönlendirme gerçekleşmediyse kullanıcıyı butona yönlendir */
     setTimeout(function(){
       stopSpinner('Açılmadıysa aşağıdaki butona dokun.');
