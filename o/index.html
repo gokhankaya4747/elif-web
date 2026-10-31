@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0A241D" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Grup ODOJ — Elif</title>
+<meta name="description" content="Gabung grup One Day One Juz di aplikasi Elif: satu juz sehari, bersama-sama khatam setiap hari." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Elif" />
+<meta property="og:title" content="📖 Gabung grup ODOJ — satu hari satu juz" />
+<meta property="og:description" content="30 orang, satu juz per orang setiap hari. Bersama-sama khatam Al-Qur'an setiap hari di aplikasi Elif. Gratis, tanpa iklan." />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:image" content="https://elifmuslim.com/assets/og.png" />
+<link rel="icon" type="image/png" href="../assets/icon.png" />
+<link rel="apple-touch-icon" href="../assets/icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ======================================================================
+   ELIF — /o/?c=KOD  ODOJ grup daveti. Uygulamadaki app/odoj ile aynı sunucu
+   (odoj_preview). Katılma uygulamada olur: sayfa grubu tanıtır, kodu gösterir,
+   uygulamayı açar ya da mağazaya yönlendirir.
+   ====================================================================== */
+:root{
+  --green:#0E7C66; --green-900:#0A241D; --green-800:#0C3025;
+  --cream:#F6F3EC; --muted:rgba(246,243,236,.72); --faint:rgba(246,243,236,.45);
+  --gold:#D9A93B; --gold-soft:rgba(217,169,59,.22); --card:rgba(255,255,255,.06); --line:rgba(255,255,255,.12);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:radial-gradient(120% 90% at 50% 0%,var(--green-800) 0%,var(--green-900) 60%);
+  color:var(--cream);min-height:100vh;padding:28px 16px 48px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:460px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:18px;opacity:.9}
+.brand img{width:34px;height:34px;border-radius:10px}
+.brand span{font-family:Fraunces,serif;font-size:20px}
+h1{font-family:Fraunces,serif;font-weight:600;font-size:26px;line-height:1.2;text-align:center;margin:0 0 6px}
+.lead{text-align:center;color:var(--muted);font-size:15px;line-height:1.5;margin:0 0 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:14px}
+.code{font-family:Fraunces,serif;font-size:40px;letter-spacing:6px;text-align:center;color:var(--gold);margin:4px 0}
+.sub{text-align:center;color:var(--muted);font-size:14px}
+.bar{height:8px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden;margin-top:12px}
+.bar i{display:block;height:100%;background:var(--green)}
+.steps{margin:0;padding-left:20px;color:var(--muted);font-size:14px;line-height:1.7}
+.steps b{color:var(--cream)}
+.btn{display:block;width:100%;text-align:center;padding:14px;border-radius:14px;border:0;font-weight:700;font-size:16px;cursor:pointer;text-decoration:none;margin-top:10px}
+.btn.primary{background:var(--gold);color:#2A1E05}
+.btn.ghost{background:transparent;color:var(--cream);border:1px solid var(--line)}
+.stores{display:flex;gap:8px}
+.stores a{flex:1}
+.msg{text-align:center;color:var(--muted);padding:30px 10px}
+.foot{text-align:center;color:var(--faint);font-size:12px;margin-top:18px;line-height:1.5}
+.copy{background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;font-size:13px;display:block;margin:6px auto 0}
+</style>
+<script src="/assets/analytics.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><img src="../assets/icon.png" alt="" /><span>Elif</span></div>
+  <div id="root"><div class="msg" id="loading">Memuat…</div></div>
+  <div class="stores">
+    <a class="btn ghost" id="ios" href="https://apps.apple.com/app/id6776661502">App Store</a>
+    <a class="btn ghost" id="android" href="https://play.google.com/store/apps/details?id=com.huzur.islamiasistan&referrer=utm_source%3Dodoj">Google Play</a>
+  </div>
+  <div class="foot" id="foot">Elif — Al-Qur’an, jadwal salat, dan ODOJ dalam satu aplikasi. Gratis, tanpa iklan.</div>
+</div>
+<script>
+(function(){
+  var SB = 'https://wcgaqdozedgzuipihklq.supabase.co/rest/v1/rpc/';
+  var ANON = 'sb_publishable_vTjoYkm8ibOVkpdymCY_Bw_r3lcvy8K';
+  var L = 'id';
+  try {
+    var c = [new URLSearchParams(location.search).get('l') || ''].concat(navigator.languages || [], [navigator.language || '']);
+    for (var i = 0; i < c.length; i++) { var s = String(c[i] || '').toLowerCase().split(/[-_]/)[0]; if (s === 'in') s = 'id'; if (s === 'id' || s === 'tr' || s === 'en') { L = s; break; } }
+  } catch (e) {}
+  document.documentElement.setAttribute('lang', L);
+  var T = {
+    id: { loading:'Memuat…', notFound:'Grup tidak ditemukan. Periksa kembali tautannya.', netErr:'Tidak dapat terhubung. Muat ulang halaman ini.',
+      title:'Gabung grup ODOJ', lead:'Satu hari satu juz: 30 orang membaca masing-masing satu juz setiap hari, sehingga grup khatam Al-Qur’an setiap hari.',
+      code:'Kode grup', members:'{n} dari 30 anggota · {left} tempat tersisa', full:'Grup ini sudah penuh (30 anggota).',
+      open:'Buka di aplikasi Elif', how:'Cara bergabung', s1:'<b>Pasang Elif</b> dari App Store atau Google Play (gratis).', s2:'Buka tab <b>Al-Qur’an</b> lalu ketuk <b>ODOJ</b>.', s3:'Ketik kode <b>{code}</b> dan ketuk <b>Gabung</b>.',
+      copy:'Salin kode', copied:'Kode disalin', foot:'Elif — Al-Qur’an, jadwal salat, dan ODOJ dalam satu aplikasi. Gratis, tanpa iklan.' },
+    tr: { loading:'Yükleniyor…', notFound:'Grup bulunamadı. Bağlantıyı kontrol et.', netErr:'Bağlantı kurulamadı. Sayfayı yenile.',
+      title:'ODOJ grubuna katıl', lead:'Günde bir cüz: 30 kişi her gün birer cüz okur, grup her gün bir hatim indirir.',
+      code:'Grup kodu', members:'30 kişiden {n} kişi · {left} yer kaldı', full:'Bu grup dolu (30 üye).',
+      open:'Elif uygulamasında aç', how:'Nasıl katılırım', s1:'App Store veya Google Play’den <b>Elif’i yükle</b> (ücretsiz).', s2:'<b>Kur’an</b> sekmesini aç, <b>ODOJ</b>’a dokun.', s3:'<b>{code}</b> kodunu yaz ve <b>Katıl</b>’a dokun.',
+      copy:'Kodu kopyala', copied:'Kod kopyalandı', foot:'Elif — Kur’an, namaz vakitleri ve ODOJ tek uygulamada. Ücretsiz, reklamsız.' },
+    en: { loading:'Loading…', notFound:'Group not found. Please check the link.', netErr:'Couldn’t connect. Please refresh the page.',
+      title:'Join an ODOJ group', lead:'One day, one juz: 30 people each read one juz a day, so the group completes the Qur’an every day.',
+      code:'Group code', members:'{n} of 30 members · {left} places left', full:'This group is full (30 members).',
+      open:'Open in the Elif app', how:'How to join', s1:'<b>Install Elif</b> from the App Store or Google Play (free).', s2:'Open the <b>Qur’an</b> tab and tap <b>ODOJ</b>.', s3:'Type the code <b>{code}</b> and tap <b>Join</b>.',
+      copy:'Copy code', copied:'Code copied', foot:'Elif — Qur’an, prayer times and ODOJ in one app. Free, no ads.' }
+  }[L];
+  function f(s, p){ return s.replace(/\{(\w+)\}/g, function(_, k){ return p[k]; }); }
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]; }); }
+  document.getElementById('loading').textContent = T.loading;
+  document.getElementById('foot').textContent = T.foot;
+  var code = '';
+  try { code = (new URLSearchParams(location.search).get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8); } catch (e) {}
+  var root = document.getElementById('root');
+  if (!code) { root.innerHTML = '<div class="msg">' + T.notFound + '</div>'; return; }
+  fetch(SB + 'odoj_preview', { method:'POST', headers:{ apikey:ANON, Authorization:'Bearer ' + ANON, 'Content-Type':'application/json' }, body: JSON.stringify({ p_code: code }) })
+    .then(function(r){ return r.json(); })
+    .then(function(g){
+      if (!g || !g.name) { root.innerHTML = '<div class="msg">' + T.notFound + '</div>'; return; }
+      var n = Number(g.members) || 0, left = Math.max(0, 30 - n);
+      document.title = g.name + ' — ODOJ · Elif';
+      root.innerHTML =
+        '<h1>' + esc(g.name) + '</h1><p class="lead">' + T.lead + '</p>' +
+        '<div class="card"><div class="sub">' + T.code + '</div><div class="code">' + code + '</div>' +
+        '<button class="copy" id="copy">' + T.copy + '</button>' +
+        '<div class="sub" style="margin-top:10px">' + (left ? f(T.members, { n:n, left:left }) : T.full) + '</div>' +
+        '<div class="bar"><i style="width:' + Math.min(100, n / 30 * 100) + '%"></i></div>' +
+        '<a class="btn primary" href="huzur://odoj/' + code + '">' + T.open + '</a></div>' +
+        '<div class="card"><div style="font-weight:700;margin-bottom:6px">' + T.how + '</div><ol class="steps"><li>' + T.s1 + '</li><li>' + T.s2 + '</li><li>' + f(T.s3, { code: code }) + '</li></ol></div>';
+      var b = document.getElementById('copy');
+      b.onclick = function(){ try { navigator.clipboard.writeText(code).then(function(){ b.textContent = T.copied; }); } catch (e) {} };
+    })
+    .catch(function(){ root.innerHTML = '<div class="msg">' + T.netErr + '</div>'; });
+})();
+</script>
+</body>
+</html>
